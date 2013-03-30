@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED0D6DC0170538E7005D54D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DBF170538E7005D54D2 /* UIKit.framework */; };
+		ED0D6DC2170538E7005D54D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC1170538E7005D54D2 /* Foundation.framework */; };
+		ED0D6DC4170538E7005D54D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC3170538E7005D54D2 /* CoreGraphics.framework */; };
+		ED0D6DCA170538E7005D54D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DC8170538E7005D54D2 /* InfoPlist.strings */; };
+		ED0D6DCC170538E7005D54D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D6DCB170538E7005D54D2 /* main.m */; };
+		ED0D6DD0170538E7005D54D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D6DCF170538E7005D54D2 /* AppDelegate.m */; };
+		ED0D6DD2170538E7005D54D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DD1170538E7005D54D2 /* Default.png */; };
+		ED0D6DD4170538E7005D54D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DD3170538E7005D54D2 /* Default@2x.png */; };
+		ED0D6DD6170538E7005D54D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DD5170538E7005D54D2 /* Default-568h@2x.png */; };
+		ED0D6DD9170538E7005D54D2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DD7170538E7005D54D2 /* MainStoryboard.storyboard */; };
+		ED0D6DE4170538E7005D54D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DE3170538E7005D54D2 /* SenTestingKit.framework */; };
+		ED0D6DE5170538E7005D54D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DBF170538E7005D54D2 /* UIKit.framework */; };
+		ED0D6DE6170538E7005D54D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC1170538E7005D54D2 /* Foundation.framework */; };
+		ED0D6DEE170538E7005D54D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DEC170538E7005D54D2 /* InfoPlist.strings */; };
+		ED0D6DF1170538E7005D54D2 /* Mevorah_Grand_PrixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D6DF0170538E7005D54D2 /* Mevorah_Grand_PrixTests.m */; };
+		ED47C71F1707868A006A7087 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C71D1707868A006A7087 /* MainMenuViewController.m */; };
+		ED47C7201707868A006A7087 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C71D1707868A006A7087 /* MainMenuViewController.m */; };
+		ED47C725170786F6006A7087 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C724170786F6006A7087 /* GameViewController.m */; };
+		ED47C726170786F6006A7087 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C724170786F6006A7087 /* GameViewController.m */; };
+		ED47C72917078854006A7087 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C72817078853006A7087 /* Engine.m */; };
+		ED47C72A17078854006A7087 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C72817078853006A7087 /* Engine.m */; };
+		ED47C74C17079168006A7087 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C74B17079168006A7087 /* GoogleMaps.framework */; };
+		ED47C74D17079168006A7087 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C74B17079168006A7087 /* GoogleMaps.framework */; };
+		ED47C74F17079174006A7087 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED47C74E17079174006A7087 /* GoogleMaps.bundle */; };
+		ED47C75017079174006A7087 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED47C74E17079174006A7087 /* GoogleMaps.bundle */; };
+		ED47C75217079184006A7087 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C75117079184006A7087 /* AVFoundation.framework */; };
+		ED47C75617079194006A7087 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C75317079194006A7087 /* CoreData.framework */; };
+		ED47C75717079194006A7087 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C75417079194006A7087 /* CoreLocation.framework */; };
+		ED47C75817079194006A7087 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C75517079194006A7087 /* CoreText.framework */; };
+		ED47C75A1707919D006A7087 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C7591707919D006A7087 /* GLKit.framework */; };
+		ED47C75C170791A3006A7087 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C75B170791A3006A7087 /* ImageIO.framework */; };
+		ED47C760170791B3006A7087 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C75F170791B3006A7087 /* libicucore.dylib */; };
+		ED47C762170791BF006A7087 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C761170791BF006A7087 /* libz.dylib */; };
+		ED47C764170791C6006A7087 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C763170791C6006A7087 /* OpenGLES.framework */; };
+		ED47C766170791CA006A7087 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C765170791CA006A7087 /* QuartzCore.framework */; };
+		ED47C768170791CE006A7087 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C767170791CE006A7087 /* SystemConfiguration.framework */; };
+		ED47C76A170791E7006A7087 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C769170791E7006A7087 /* libstdc++.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED0D6DE7170538E7005D54D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED0D6DB4170538E7005D54D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED0D6DBB170538E7005D54D2;
+			remoteInfo = "Mevorah Grand Prix";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED0D6DBC170538E7005D54D2 /* Mevorah Grand Prix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mevorah Grand Prix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0D6DBF170538E7005D54D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ED0D6DC1170538E7005D54D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ED0D6DC3170538E7005D54D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ED0D6DC7170538E7005D54D2 /* Mevorah Grand Prix-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mevorah Grand Prix-Info.plist"; sourceTree = "<group>"; };
+		ED0D6DC9170538E7005D54D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED0D6DCB170538E7005D54D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED0D6DCD170538E7005D54D2 /* Mevorah Grand Prix-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mevorah Grand Prix-Prefix.pch"; sourceTree = "<group>"; };
+		ED0D6DCE170538E7005D54D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ED0D6DCF170538E7005D54D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ED0D6DD1170538E7005D54D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		ED0D6DD3170538E7005D54D2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		ED0D6DD5170538E7005D54D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		ED0D6DD8170538E7005D54D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		ED0D6DE2170538E7005D54D2 /* Mevorah Grand PrixTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mevorah Grand PrixTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0D6DE3170538E7005D54D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		ED0D6DEB170538E7005D54D2 /* Mevorah Grand PrixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mevorah Grand PrixTests-Info.plist"; sourceTree = "<group>"; };
+		ED0D6DED170538E7005D54D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED0D6DEF170538E7005D54D2 /* Mevorah_Grand_PrixTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mevorah_Grand_PrixTests.h; sourceTree = "<group>"; };
+		ED0D6DF0170538E7005D54D2 /* Mevorah_Grand_PrixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mevorah_Grand_PrixTests.m; sourceTree = "<group>"; };
+		ED47C71C1707868A006A7087 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		ED47C71D1707868A006A7087 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		ED47C723170786F6006A7087 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		ED47C724170786F6006A7087 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		ED47C72717078853006A7087 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
+		ED47C72817078853006A7087 /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
+		ED47C74B17079168006A7087 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		ED47C74E17079174006A7087 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		ED47C75117079184006A7087 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		ED47C75317079194006A7087 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ED47C75417079194006A7087 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ED47C75517079194006A7087 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		ED47C7591707919D006A7087 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		ED47C75B170791A3006A7087 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		ED47C75F170791B3006A7087 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		ED47C761170791BF006A7087 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		ED47C763170791C6006A7087 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		ED47C765170791CA006A7087 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ED47C767170791CE006A7087 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ED47C769170791E7006A7087 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED0D6DB9170538E7005D54D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED47C76A170791E7006A7087 /* libstdc++.dylib in Frameworks */,
+				ED47C768170791CE006A7087 /* SystemConfiguration.framework in Frameworks */,
+				ED47C766170791CA006A7087 /* QuartzCore.framework in Frameworks */,
+				ED47C764170791C6006A7087 /* OpenGLES.framework in Frameworks */,
+				ED47C762170791BF006A7087 /* libz.dylib in Frameworks */,
+				ED47C760170791B3006A7087 /* libicucore.dylib in Frameworks */,
+				ED47C75C170791A3006A7087 /* ImageIO.framework in Frameworks */,
+				ED47C75A1707919D006A7087 /* GLKit.framework in Frameworks */,
+				ED47C75617079194006A7087 /* CoreData.framework in Frameworks */,
+				ED47C75717079194006A7087 /* CoreLocation.framework in Frameworks */,
+				ED47C75817079194006A7087 /* CoreText.framework in Frameworks */,
+				ED47C75217079184006A7087 /* AVFoundation.framework in Frameworks */,
+				ED0D6DC0170538E7005D54D2 /* UIKit.framework in Frameworks */,
+				ED0D6DC2170538E7005D54D2 /* Foundation.framework in Frameworks */,
+				ED0D6DC4170538E7005D54D2 /* CoreGraphics.framework in Frameworks */,
+				ED47C74C17079168006A7087 /* GoogleMaps.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0D6DDE170538E7005D54D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0D6DE4170538E7005D54D2 /* SenTestingKit.framework in Frameworks */,
+				ED0D6DE5170538E7005D54D2 /* UIKit.framework in Frameworks */,
+				ED0D6DE6170538E7005D54D2 /* Foundation.framework in Frameworks */,
+				ED47C74D17079168006A7087 /* GoogleMaps.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED0D6DB3170538E7005D54D2 = {
+			isa = PBXGroup;
+			children = (
+				ED0D6DC5170538E7005D54D2 /* Mevorah Grand Prix */,
+				ED0D6DE9170538E7005D54D2 /* Mevorah Grand PrixTests */,
+				ED0D6DBE170538E7005D54D2 /* Frameworks */,
+				ED0D6DBD170538E7005D54D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED0D6DBD170538E7005D54D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED0D6DBC170538E7005D54D2 /* Mevorah Grand Prix.app */,
+				ED0D6DE2170538E7005D54D2 /* Mevorah Grand PrixTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED0D6DBE170538E7005D54D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED47C769170791E7006A7087 /* libstdc++.dylib */,
+				ED47C767170791CE006A7087 /* SystemConfiguration.framework */,
+				ED47C765170791CA006A7087 /* QuartzCore.framework */,
+				ED47C763170791C6006A7087 /* OpenGLES.framework */,
+				ED47C761170791BF006A7087 /* libz.dylib */,
+				ED47C75F170791B3006A7087 /* libicucore.dylib */,
+				ED47C75B170791A3006A7087 /* ImageIO.framework */,
+				ED47C7591707919D006A7087 /* GLKit.framework */,
+				ED47C75317079194006A7087 /* CoreData.framework */,
+				ED47C75417079194006A7087 /* CoreLocation.framework */,
+				ED47C75517079194006A7087 /* CoreText.framework */,
+				ED47C75117079184006A7087 /* AVFoundation.framework */,
+				ED47C74E17079174006A7087 /* GoogleMaps.bundle */,
+				ED47C74B17079168006A7087 /* GoogleMaps.framework */,
+				ED0D6DBF170538E7005D54D2 /* UIKit.framework */,
+				ED0D6DC1170538E7005D54D2 /* Foundation.framework */,
+				ED0D6DC3170538E7005D54D2 /* CoreGraphics.framework */,
+				ED0D6DE3170538E7005D54D2 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED0D6DC5170538E7005D54D2 /* Mevorah Grand Prix */ = {
+			isa = PBXGroup;
+			children = (
+				ED0D6DCE170538E7005D54D2 /* AppDelegate.h */,
+				ED0D6DCF170538E7005D54D2 /* AppDelegate.m */,
+				ED0D6DD7170538E7005D54D2 /* MainStoryboard.storyboard */,
+				ED47C71C1707868A006A7087 /* MainMenuViewController.h */,
+				ED47C71D1707868A006A7087 /* MainMenuViewController.m */,
+				ED47C723170786F6006A7087 /* GameViewController.h */,
+				ED47C724170786F6006A7087 /* GameViewController.m */,
+				ED47C72717078853006A7087 /* Engine.h */,
+				ED47C72817078853006A7087 /* Engine.m */,
+				ED0D6DC6170538E7005D54D2 /* Supporting Files */,
+			);
+			path = "Mevorah Grand Prix";
+			sourceTree = "<group>";
+		};
+		ED0D6DC6170538E7005D54D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED0D6DC7170538E7005D54D2 /* Mevorah Grand Prix-Info.plist */,
+				ED0D6DC8170538E7005D54D2 /* InfoPlist.strings */,
+				ED0D6DCB170538E7005D54D2 /* main.m */,
+				ED0D6DCD170538E7005D54D2 /* Mevorah Grand Prix-Prefix.pch */,
+				ED0D6DD1170538E7005D54D2 /* Default.png */,
+				ED0D6DD3170538E7005D54D2 /* Default@2x.png */,
+				ED0D6DD5170538E7005D54D2 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED0D6DE9170538E7005D54D2 /* Mevorah Grand PrixTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED0D6DEF170538E7005D54D2 /* Mevorah_Grand_PrixTests.h */,
+				ED0D6DF0170538E7005D54D2 /* Mevorah_Grand_PrixTests.m */,
+				ED0D6DEA170538E7005D54D2 /* Supporting Files */,
+			);
+			path = "Mevorah Grand PrixTests";
+			sourceTree = "<group>";
+		};
+		ED0D6DEA170538E7005D54D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED0D6DEB170538E7005D54D2 /* Mevorah Grand PrixTests-Info.plist */,
+				ED0D6DEC170538E7005D54D2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED0D6DBB170538E7005D54D2 /* Mevorah Grand Prix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0D6DF4170538E7005D54D2 /* Build configuration list for PBXNativeTarget "Mevorah Grand Prix" */;
+			buildPhases = (
+				ED0D6DB8170538E7005D54D2 /* Sources */,
+				ED0D6DB9170538E7005D54D2 /* Frameworks */,
+				ED0D6DBA170538E7005D54D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mevorah Grand Prix";
+			productName = "Mevorah Grand Prix";
+			productReference = ED0D6DBC170538E7005D54D2 /* Mevorah Grand Prix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED0D6DE1170538E7005D54D2 /* Mevorah Grand PrixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0D6DF7170538E7005D54D2 /* Build configuration list for PBXNativeTarget "Mevorah Grand PrixTests" */;
+			buildPhases = (
+				ED0D6DDD170538E7005D54D2 /* Sources */,
+				ED0D6DDE170538E7005D54D2 /* Frameworks */,
+				ED0D6DDF170538E7005D54D2 /* Resources */,
+				ED0D6DE0170538E7005D54D2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED0D6DE8170538E7005D54D2 /* PBXTargetDependency */,
+			);
+			name = "Mevorah Grand PrixTests";
+			productName = "Mevorah Grand PrixTests";
+			productReference = ED0D6DE2170538E7005D54D2 /* Mevorah Grand PrixTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED0D6DB4170538E7005D54D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Mark Mevorah";
+			};
+			buildConfigurationList = ED0D6DB7170538E7005D54D2 /* Build configuration list for PBXProject "Mevorah Grand Prix" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ED0D6DB3170538E7005D54D2;
+			productRefGroup = ED0D6DBD170538E7005D54D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED0D6DBB170538E7005D54D2 /* Mevorah Grand Prix */,
+				ED0D6DE1170538E7005D54D2 /* Mevorah Grand PrixTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED0D6DBA170538E7005D54D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0D6DCA170538E7005D54D2 /* InfoPlist.strings in Resources */,
+				ED0D6DD2170538E7005D54D2 /* Default.png in Resources */,
+				ED0D6DD4170538E7005D54D2 /* Default@2x.png in Resources */,
+				ED0D6DD6170538E7005D54D2 /* Default-568h@2x.png in Resources */,
+				ED0D6DD9170538E7005D54D2 /* MainStoryboard.storyboard in Resources */,
+				ED47C74F17079174006A7087 /* GoogleMaps.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0D6DDF170538E7005D54D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0D6DEE170538E7005D54D2 /* InfoPlist.strings in Resources */,
+				ED47C75017079174006A7087 /* GoogleMaps.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ED0D6DE0170538E7005D54D2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED0D6DB8170538E7005D54D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0D6DCC170538E7005D54D2 /* main.m in Sources */,
+				ED0D6DD0170538E7005D54D2 /* AppDelegate.m in Sources */,
+				ED47C71F1707868A006A7087 /* MainMenuViewController.m in Sources */,
+				ED47C725170786F6006A7087 /* GameViewController.m in Sources */,
+				ED47C72917078854006A7087 /* Engine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0D6DDD170538E7005D54D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0D6DF1170538E7005D54D2 /* Mevorah_Grand_PrixTests.m in Sources */,
+				ED47C7201707868A006A7087 /* MainMenuViewController.m in Sources */,
+				ED47C726170786F6006A7087 /* GameViewController.m in Sources */,
+				ED47C72A17078854006A7087 /* Engine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED0D6DE8170538E7005D54D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED0D6DBB170538E7005D54D2 /* Mevorah Grand Prix */;
+			targetProxy = ED0D6DE7170538E7005D54D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED0D6DC8170538E7005D54D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0D6DC9170538E7005D54D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ED0D6DD7170538E7005D54D2 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0D6DD8170538E7005D54D2 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		ED0D6DEC170538E7005D54D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0D6DED170538E7005D54D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED0D6DF2170538E7005D54D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ED0D6DF3170538E7005D54D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED0D6DF5170538E7005D54D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mevorah Grand Prix/Mevorah Grand Prix-Prefix.pch";
+				INFOPLIST_FILE = "Mevorah Grand Prix/Mevorah Grand Prix-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ED0D6DF6170538E7005D54D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mevorah Grand Prix/Mevorah Grand Prix-Prefix.pch";
+				INFOPLIST_FILE = "Mevorah Grand Prix/Mevorah Grand Prix-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ED0D6DF8170538E7005D54D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mevorah Grand Prix.app/Mevorah Grand Prix";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mevorah Grand Prix/Mevorah Grand Prix-Prefix.pch";
+				INFOPLIST_FILE = "Mevorah Grand PrixTests/Mevorah Grand PrixTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		ED0D6DF9170538E7005D54D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mevorah Grand Prix.app/Mevorah Grand Prix";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mevorah Grand Prix/Mevorah Grand Prix-Prefix.pch";
+				INFOPLIST_FILE = "Mevorah Grand PrixTests/Mevorah Grand PrixTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED0D6DB7170538E7005D54D2 /* Build configuration list for PBXProject "Mevorah Grand Prix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0D6DF2170538E7005D54D2 /* Debug */,
+				ED0D6DF3170538E7005D54D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0D6DF4170538E7005D54D2 /* Build configuration list for PBXNativeTarget "Mevorah Grand Prix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0D6DF5170538E7005D54D2 /* Debug */,
+				ED0D6DF6170538E7005D54D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0D6DF7170538E7005D54D2 /* Build configuration list for PBXNativeTarget "Mevorah Grand PrixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0D6DF8170538E7005D54D2 /* Debug */,
+				ED0D6DF9170538E7005D54D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED0D6DB4170538E7005D54D2 /* Project object */;
+}

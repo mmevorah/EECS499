@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED86F8EF17038A71003B39E3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED86F8EE17038A71003B39E3 /* MainWindow.xib */; };
+		ED86F8F3170391AE003B39E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED86F8F1170391AE003B39E3 /* ViewController.m */; };
+		ED86F8F4170391AE003B39E3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED86F8F2170391AE003B39E3 /* ViewController.xib */; };
 		ED953A7C1702260700398CDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED953A7B1702260700398CDB /* QuartzCore.framework */; };
 		ED953A7E1702260700398CDB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED953A7D1702260700398CDB /* OpenGLES.framework */; };
 		ED953A801702260700398CDB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED953A7F1702260700398CDB /* OpenAL.framework */; };
@@ -132,7 +135,6 @@
 		ED953C041702260900398CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED953C031702260900398CDB /* main.m */; };
 		ED953C071702260900398CDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED953C061702260900398CDB /* AppDelegate.m */; };
 		ED953C0A1702260900398CDB /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED953C091702260900398CDB /* HelloWorldLayer.m */; };
-		ED953C0D1702260900398CDB /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED953C0C1702260900398CDB /* IntroLayer.m */; };
 		ED953C141702262F00398CDB /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED953C131702262F00398CDB /* GoogleMaps.framework */; };
 		ED953C161702264000398CDB /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED953C151702264000398CDB /* GoogleMaps.bundle */; };
 		ED953C181702267A00398CDB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED953C171702267A00398CDB /* CoreData.framework */; };
@@ -147,6 +149,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED86F8EE17038A71003B39E3 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		ED86F8F0170391AE003B39E3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ED86F8F1170391AE003B39E3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ED86F8F2170391AE003B39E3 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		ED86F8F5170395F5003B39E3 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		ED953A781702260700398CDB /* cocosMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocosMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED953A7B1702260700398CDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED953A7D1702260700398CDB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -407,8 +414,6 @@
 		ED953C061702260900398CDB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ED953C081702260900398CDB /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		ED953C091702260900398CDB /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		ED953C0B1702260900398CDB /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		ED953C0C1702260900398CDB /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		ED953C131702262F00398CDB /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		ED953C151702264000398CDB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		ED953C171702267A00398CDB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -501,10 +506,13 @@
 			children = (
 				ED953C051702260900398CDB /* AppDelegate.h */,
 				ED953C061702260900398CDB /* AppDelegate.m */,
+				ED86F8F5170395F5003B39E3 /* GameConfig.h */,
+				ED86F8F0170391AE003B39E3 /* ViewController.h */,
+				ED86F8F1170391AE003B39E3 /* ViewController.m */,
+				ED86F8F2170391AE003B39E3 /* ViewController.xib */,
 				ED953C081702260900398CDB /* HelloWorldLayer.h */,
 				ED953C091702260900398CDB /* HelloWorldLayer.m */,
-				ED953C0B1702260900398CDB /* IntroLayer.h */,
-				ED953C0C1702260900398CDB /* IntroLayer.m */,
+				ED86F8EE17038A71003B39E3 /* MainWindow.xib */,
 				ED953A8E1702260700398CDB /* Resources */,
 				ED953AA81702260700398CDB /* libs */,
 				ED953C011702260900398CDB /* Supporting Files */,
@@ -939,6 +947,8 @@
 				ED953AA71702260700398CDB /* iTunesArtwork in Resources */,
 				ED953BE51702260900398CDB /* ChangeLog in Resources */,
 				ED953C161702264000398CDB /* GoogleMaps.bundle in Resources */,
+				ED86F8EF17038A71003B39E3 /* MainWindow.xib in Resources */,
+				ED86F8F4170391AE003B39E3 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,7 +1062,7 @@
 				ED953C041702260900398CDB /* main.m in Sources */,
 				ED953C071702260900398CDB /* AppDelegate.m in Sources */,
 				ED953C0A1702260900398CDB /* HelloWorldLayer.m in Sources */,
-				ED953C0D1702260900398CDB /* IntroLayer.m in Sources */,
+				ED86F8F3170391AE003B39E3 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1166,6 +1176,7 @@
 				ED953C121702260900398CDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

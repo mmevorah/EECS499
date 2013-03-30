@@ -1,0 +1,88 @@
+// !$*UTF8*$!
+{
+	ED6F8331170388A600288A81 /* cocosMaps */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = cocosMaps;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	ED6F8388170388B300288A81 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	ED6F8389170388B300288A81 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	ED953A701702260700398CDB /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = ED6F8331170388A600288A81 /* cocosMaps */;
+		activeTarget = ED953A771702260700398CDB /* cocosMaps */;
+		codeSenseManager = ED6F8389170388B300288A81 /* Code sense */;
+		executables = (
+			ED6F8331170388A600288A81 /* cocosMaps */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					356,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 386107558;
+			PBXWorkspaceStateSaveDate = 386107558;
+		};
+		sourceControlManager = ED6F8388170388B300288A81 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	ED953A771702260700398CDB /* cocosMaps */ = {
+		activeExec = 0;
+		executables = (
+			ED6F8331170388A600288A81 /* cocosMaps */,
+		);
+	};
+}

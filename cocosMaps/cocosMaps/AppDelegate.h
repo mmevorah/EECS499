@@ -9,17 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "ViewController.h"
 
 @interface AppController : NSObject <UIApplicationDelegate, CCDirectorDelegate>
 {
 	UIWindow *window_;
-	UINavigationController *navController_;
-
 	CCDirectorIOS	*director_;							// weak ref
+    ViewController *viewController;
 }
 
-@property (nonatomic, retain) UIWindow *window;
-@property (readonly) UINavigationController *navController;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (readonly) CCDirectorIOS *director;
+@property (nonatomic, retain) ViewController *viewController;
 
 @end
