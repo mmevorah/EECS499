@@ -14,12 +14,14 @@ What's Been Done
 -Worked out the game's organization
 -Worked out the car's mechanics
 -Begun learning and using the cocos-2d framework
+-Integrated controlles and the map
+-Create a class that handles car information
+-manipulate information class and map with cocos 2d buttons
 
 What needs to be done in short term
 ===================================
--Ability to layer cocos-2d over the map view
--Create a class that handles car information
--manipulate information class and map with cocos 2d buttons
+-Tweak car mechanics
+-Find a better way to rotate and display car
 
 What needs to be done in the mid term
 =====================================
