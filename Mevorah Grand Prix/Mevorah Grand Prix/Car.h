@@ -7,7 +7,45 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface Car : UIView
+@interface Car : UIView{
+   
+    
+    CGFloat locationX;
+    CGFloat locationY;
+    
+    CGFloat frontWheelX;
+    CGFloat frontWheelY;
+    CGFloat backWheelX;
+    CGFloat backWheelY;
+    
+    
+    CGFloat velocityX;
+    CGFloat velocityY;
+    CGFloat drag;
+    CGFloat angle;
+    CGFloat angularVelocity;
+    CGFloat angularDrag;
+    CGFloat power;
+    CGFloat turnSpeed;
+    
+    
+
+     CGFloat heading; //car's rotation
+     CGFloat speed;
+     CGFloat steerAngle;
+ 
+}
+- (id)initWithFrame:(CGRect)frame withImage:(UIImage*)image;
+
+@property(strong, nonatomic) UIImageView* image;
+
+-(void)updateValues;
+
+-(void)accellerate;
+-(void)reverse;
+-(void)turnLeft;
+-(void)turnRight;
 
 @end

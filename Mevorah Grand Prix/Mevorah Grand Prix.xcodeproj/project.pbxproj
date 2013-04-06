@@ -26,8 +26,6 @@
 		ED47C7201707868A006A7087 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C71D1707868A006A7087 /* MainMenuViewController.m */; };
 		ED47C725170786F6006A7087 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C724170786F6006A7087 /* GameViewController.m */; };
 		ED47C726170786F6006A7087 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C724170786F6006A7087 /* GameViewController.m */; };
-		ED47C72917078854006A7087 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C72817078853006A7087 /* Engine.m */; };
-		ED47C72A17078854006A7087 /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C72817078853006A7087 /* Engine.m */; };
 		ED47C74C17079168006A7087 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C74B17079168006A7087 /* GoogleMaps.framework */; };
 		ED47C74D17079168006A7087 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C74B17079168006A7087 /* GoogleMaps.framework */; };
 		ED47C74F17079174006A7087 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED47C74E17079174006A7087 /* GoogleMaps.bundle */; };
@@ -44,6 +42,12 @@
 		ED47C766170791CA006A7087 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C765170791CA006A7087 /* QuartzCore.framework */; };
 		ED47C768170791CE006A7087 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C767170791CE006A7087 /* SystemConfiguration.framework */; };
 		ED47C76A170791E7006A7087 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C769170791E7006A7087 /* libstdc++.dylib */; };
+		EDA280C3170F53EF00CC3FAA /* carA.ai in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C1170F53EF00CC3FAA /* carA.ai */; };
+		EDA280C4170F53EF00CC3FAA /* carA.ai in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C1170F53EF00CC3FAA /* carA.ai */; };
+		EDA280C5170F53EF00CC3FAA /* carA.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C2170F53EF00CC3FAA /* carA.png */; };
+		EDA280C6170F53EF00CC3FAA /* carA.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C2170F53EF00CC3FAA /* carA.png */; };
+		EDA280C9170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
+		EDA280CA170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,8 +85,6 @@
 		ED47C71D1707868A006A7087 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		ED47C723170786F6006A7087 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		ED47C724170786F6006A7087 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		ED47C72717078853006A7087 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
-		ED47C72817078853006A7087 /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
 		ED47C74B17079168006A7087 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		ED47C74E17079174006A7087 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		ED47C75117079184006A7087 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,10 @@
 		ED47C765170791CA006A7087 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED47C767170791CE006A7087 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ED47C769170791E7006A7087 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		EDA280C1170F53EF00CC3FAA /* carA.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = carA.ai; sourceTree = "<group>"; };
+		EDA280C2170F53EF00CC3FAA /* carA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carA.png; sourceTree = "<group>"; };
+		EDA280C7170F5AEF00CC3FAA /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		EDA280C8170F5AEF00CC3FAA /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +197,8 @@
 				ED47C71D1707868A006A7087 /* MainMenuViewController.m */,
 				ED47C723170786F6006A7087 /* GameViewController.h */,
 				ED47C724170786F6006A7087 /* GameViewController.m */,
-				ED47C72717078853006A7087 /* Engine.h */,
-				ED47C72817078853006A7087 /* Engine.m */,
+				EDA280C7170F5AEF00CC3FAA /* Car.h */,
+				EDA280C8170F5AEF00CC3FAA /* Car.m */,
 				ED0D6DC6170538E7005D54D2 /* Supporting Files */,
 			);
 			path = "Mevorah Grand Prix";
@@ -201,6 +207,7 @@
 		ED0D6DC6170538E7005D54D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EDA280C0170F53EF00CC3FAA /* graphics */,
 				ED0D6DC7170538E7005D54D2 /* Mevorah Grand Prix-Info.plist */,
 				ED0D6DC8170538E7005D54D2 /* InfoPlist.strings */,
 				ED0D6DCB170538E7005D54D2 /* main.m */,
@@ -229,6 +236,15 @@
 				ED0D6DEC170538E7005D54D2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDA280C0170F53EF00CC3FAA /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				EDA280C1170F53EF00CC3FAA /* carA.ai */,
+				EDA280C2170F53EF00CC3FAA /* carA.png */,
+			);
+			path = graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +324,8 @@
 				ED0D6DD6170538E7005D54D2 /* Default-568h@2x.png in Resources */,
 				ED0D6DD9170538E7005D54D2 /* MainStoryboard.storyboard in Resources */,
 				ED47C74F17079174006A7087 /* GoogleMaps.bundle in Resources */,
+				EDA280C3170F53EF00CC3FAA /* carA.ai in Resources */,
+				EDA280C5170F53EF00CC3FAA /* carA.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +335,8 @@
 			files = (
 				ED0D6DEE170538E7005D54D2 /* InfoPlist.strings in Resources */,
 				ED47C75017079174006A7087 /* GoogleMaps.bundle in Resources */,
+				EDA280C4170F53EF00CC3FAA /* carA.ai in Resources */,
+				EDA280C6170F53EF00CC3FAA /* carA.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +367,7 @@
 				ED0D6DD0170538E7005D54D2 /* AppDelegate.m in Sources */,
 				ED47C71F1707868A006A7087 /* MainMenuViewController.m in Sources */,
 				ED47C725170786F6006A7087 /* GameViewController.m in Sources */,
-				ED47C72917078854006A7087 /* Engine.m in Sources */,
+				EDA280C9170F5AF000CC3FAA /* Car.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +378,7 @@
 				ED0D6DF1170538E7005D54D2 /* Mevorah_Grand_PrixTests.m in Sources */,
 				ED47C7201707868A006A7087 /* MainMenuViewController.m in Sources */,
 				ED47C726170786F6006A7087 /* GameViewController.m in Sources */,
-				ED47C72A17078854006A7087 /* Engine.m in Sources */,
+				EDA280CA170F5AF000CC3FAA /* Car.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

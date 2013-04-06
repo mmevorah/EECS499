@@ -8,10 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
-#include "Engine.h"
+#include "Car.h"
 
-@interface GameViewController : UIViewController
+@interface GameViewController :UIViewController{
+    Car *car;
+}
+@property(strong, nonatomic) Car *car;
 
-@property(strong, nonatomic) Engine *engine;
+@property(strong, nonatomic) NSTimer *clock;
+
+@property(strong, nonatomic) GMSCameraPosition *camera;
+
+@property (strong, nonatomic) IBOutlet UIView *controllerView;
+
+
+@property (strong, nonatomic) IBOutlet UIButton *accellerateButton;
+@property (strong, nonatomic) IBOutlet UIButton *reverseButton;
+@property (strong, nonatomic) IBOutlet UIButton *rightButton;
+@property (strong, nonatomic) IBOutlet UIButton *leftButton;
+
+
+
 
 @end
