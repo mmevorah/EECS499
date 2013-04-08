@@ -45,11 +45,19 @@
                                     <segue destination="v0E-Zy-OVB" kind="push" id="WUe-IF-HIw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="C6s-kj-KaL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="uP7-8t-hak"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.95215556570000004" alpha="0.94999999999999996" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bhJ-Cd-17X" firstAttribute="top" secondItem="3" secondAttribute="top" constant="102" id="3gm-RR-FA9"/>
-                            <constraint firstItem="bhJ-Cd-17X" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="gDh-Xw-vHp"/>
+                            <constraint firstItem="C6s-kj-KaL" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VB1-2y-OuY"/>
+                            <constraint firstItem="bhJ-Cd-17X" firstAttribute="top" secondItem="C6s-kj-KaL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VMz-vV-832"/>
+                            <constraint firstItem="C6s-kj-KaL" firstAttribute="centerX" secondItem="bhJ-Cd-17X" secondAttribute="centerX" type="default" id="jHA-lD-liN"/>
+                            <constraint firstAttribute="trailing" secondItem="C6s-kj-KaL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="joZ-Bx-wft"/>
+                            <constraint firstItem="C6s-kj-KaL" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="r3K-RR-fk5"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -158,6 +166,27 @@
             <point key="canvasLocation" x="402" y="90"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo-01.png" width="522" height="149"/>
+    </resources>
+    <classes>
+        <class className="GameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="accellerateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="controllerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="reverseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

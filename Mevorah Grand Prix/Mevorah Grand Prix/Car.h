@@ -29,6 +29,7 @@
     CGFloat angularDrag;
     CGFloat power;
     CGFloat turnSpeed;
+    CGFloat turningRadius;
     
     
 

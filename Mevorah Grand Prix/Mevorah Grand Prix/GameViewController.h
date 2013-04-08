@@ -11,8 +11,13 @@
 #include "Car.h"
 
 @interface GameViewController :UIViewController{
+    float checkPixelInterval;
+    
     Car *car;
 }
+
+
+
 @property(strong, nonatomic) Car *car;
 
 @property(strong, nonatomic) NSTimer *clock;
@@ -20,8 +25,6 @@
 @property(strong, nonatomic) GMSCameraPosition *camera;
 
 @property (strong, nonatomic) IBOutlet UIView *controllerView;
-
-
 @property (strong, nonatomic) IBOutlet UIButton *accellerateButton;
 @property (strong, nonatomic) IBOutlet UIButton *reverseButton;
 @property (strong, nonatomic) IBOutlet UIButton *rightButton;

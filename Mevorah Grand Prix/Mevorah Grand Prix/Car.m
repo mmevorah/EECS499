@@ -17,8 +17,7 @@
     if (self) {
         image_ = [[UIImageView alloc] initWithImage:image];
         [self addSubview:image_];
-       // self.layer.anchorPoint = CGPointMake(5, 0);
-
+        self.layer.anchorPoint = CGPointMake(.5, 1);   //fuck around with this
         
         locationX = frame.origin.x;
         locationY = frame.origin.y;
@@ -29,29 +28,34 @@
         angularVelocity = 0;
         
         power = .00005;
-        turnSpeed = .000005;
-        drag = .999;
+        turnSpeed = .00008;
+        drag = .9999;
         angularDrag = .99;
         
     }
     return self;
 }
 -(void)updateValues{
-    locationX += velocityX;
-    locationY += velocityY;
     
    // NSLog(@"LocX: %f, LocY: %f", locationX, locationY);
     
     velocityX *= drag;
     velocityY *= drag;
+    locationX += velocityX;
+    locationY += velocityY;
+        
+    CABasicAnimation *rotation;
+    rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.fromValue = [NSNumber numberWithFloat:angle];
     
     angle += angularVelocity;
     angularVelocity *= angularDrag;
     
-    CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
+    rotation.toValue = [NSNumber numberWithFloat:angle];
+    rotation.duration = (1/30);
+    [self.layer addAnimation:rotation forKey:@"angle"];
     
-    self.transform = transform;
-    
+        
     self.frame = CGRectMake(locationX,
                             locationY,
                             self.frame.size.width,

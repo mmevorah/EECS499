@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0BDEB11713766000021F3E /* logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0BDEAF1713766000021F3E /* logo-01.png */; };
+		ED0BDEB21713766000021F3E /* logo.ai in Resources */ = {isa = PBXBuildFile; fileRef = ED0BDEB01713766000021F3E /* logo.ai */; };
 		ED0D6DC0170538E7005D54D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DBF170538E7005D54D2 /* UIKit.framework */; };
 		ED0D6DC2170538E7005D54D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC1170538E7005D54D2 /* Foundation.framework */; };
 		ED0D6DC4170538E7005D54D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC3170538E7005D54D2 /* CoreGraphics.framework */; };
@@ -48,6 +50,7 @@
 		EDA280C6170F53EF00CC3FAA /* carA.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C2170F53EF00CC3FAA /* carA.png */; };
 		EDA280C9170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
 		EDA280CA170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
+		EDE0411C1710CC6B00B2BA3E /* UIViewColorOfPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED0BDEAF1713766000021F3E /* logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-01.png"; sourceTree = "<group>"; };
+		ED0BDEB01713766000021F3E /* logo.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = logo.ai; sourceTree = "<group>"; };
 		ED0D6DBC170538E7005D54D2 /* Mevorah Grand Prix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mevorah Grand Prix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0D6DBF170538E7005D54D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ED0D6DC1170538E7005D54D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +108,8 @@
 		EDA280C2170F53EF00CC3FAA /* carA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carA.png; sourceTree = "<group>"; };
 		EDA280C7170F5AEF00CC3FAA /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		EDA280C8170F5AEF00CC3FAA /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		EDE0411A1710CC6B00B2BA3E /* UIViewColorOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewColorOfPoint.h; sourceTree = "<group>"; };
+		EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewColorOfPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +222,8 @@
 				ED0D6DD1170538E7005D54D2 /* Default.png */,
 				ED0D6DD3170538E7005D54D2 /* Default@2x.png */,
 				ED0D6DD5170538E7005D54D2 /* Default-568h@2x.png */,
+				EDE0411A1710CC6B00B2BA3E /* UIViewColorOfPoint.h */,
+				EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,6 +250,8 @@
 		EDA280C0170F53EF00CC3FAA /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				ED0BDEAF1713766000021F3E /* logo-01.png */,
+				ED0BDEB01713766000021F3E /* logo.ai */,
 				EDA280C1170F53EF00CC3FAA /* carA.ai */,
 				EDA280C2170F53EF00CC3FAA /* carA.png */,
 			);
@@ -326,6 +337,8 @@
 				ED47C74F17079174006A7087 /* GoogleMaps.bundle in Resources */,
 				EDA280C3170F53EF00CC3FAA /* carA.ai in Resources */,
 				EDA280C5170F53EF00CC3FAA /* carA.png in Resources */,
+				ED0BDEB11713766000021F3E /* logo-01.png in Resources */,
+				ED0BDEB21713766000021F3E /* logo.ai in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +381,7 @@
 				ED47C71F1707868A006A7087 /* MainMenuViewController.m in Sources */,
 				ED47C725170786F6006A7087 /* GameViewController.m in Sources */,
 				EDA280C9170F5AF000CC3FAA /* Car.m in Sources */,
+				EDE0411C1710CC6B00B2BA3E /* UIViewColorOfPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

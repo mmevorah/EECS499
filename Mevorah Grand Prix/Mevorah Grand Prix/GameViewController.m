@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "UIViewColorOfPoint.h"
 
 @interface GameViewController ()
 
@@ -42,6 +43,8 @@
     double longitude = -83.729918;
     double bearing = 0;
     
+    checkPixelInterval = 0;
+    
     camera = [GMSCameraPosition cameraWithLatitude:latitude
                                                             longitude:longitude                                                              zoom:19
                                                               bearing:bearing
@@ -59,6 +62,9 @@
                                            selector:@selector(update)
                                            userInfo:nil
                                             repeats:YES];
+    
+    
+
 }
 
 -(void)update{
@@ -66,7 +72,15 @@
     if(reverseButton.state == UIControlStateHighlighted) [car_ reverse];
     if(leftButton.state == UIControlStateHighlighted) [car_ turnLeft];
     if(rightButton.state == UIControlStateHighlighted) [car_ turnRight];
+    
+    checkPixelInterval++;
+    if(checkPixelInterval == 40){
+        checkPixelInterval = 0;
+        [self.view colorOfPoint:CGPointMake(240, 150)];
+    }
+    
     [car_ updateValues];
+    
 //    NSLog(@"Velocity X: %f, Velocity Y: %f", engine.velocityX, engine.velocityY);
   //  [mapView_ animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:engine.positionY longitude:engine.positionX zoom:18.5 bearing:engine.angle viewingAngle:0]];
 }
