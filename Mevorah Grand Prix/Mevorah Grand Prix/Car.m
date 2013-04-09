@@ -28,9 +28,9 @@
         angularVelocity = 0;
         
         power = .00005;
-        turnSpeed = .00008;
-        drag = .9999;
-        angularDrag = .99;
+        turnSpeed = .00035;
+        drag = .999;
+        angularDrag = .995;
         
     }
     return self;
@@ -52,7 +52,7 @@
     angularVelocity *= angularDrag;
     
     rotation.toValue = [NSNumber numberWithFloat:angle];
-    rotation.duration = (1/30);
+    rotation.duration = (1/20);
     [self.layer addAnimation:rotation forKey:@"angle"];
     
         
@@ -74,11 +74,11 @@
 }
 
 -(void)turnLeft{
-    angularVelocity -= turnSpeed;
+    angularVelocity -= turnSpeed*sqrt(velocityX*velocityX + velocityY*velocityY);
 }
 
 -(void)turnRight{
-    angularVelocity += turnSpeed;
+    angularVelocity += turnSpeed*sqrt(velocityX*velocityX + velocityY*velocityY);
 }
 
 
