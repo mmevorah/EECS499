@@ -10,26 +10,46 @@ For this independent study I will be focussing on iOS development. I will be del
 What's Been Done
 ================
 -Re-familiarize myself with Objective-C
+
 -Read and applied the google maps api
+
 -Worked out the game's organization
+
 -Worked out the car's mechanics
--Begun learning and using the cocos-2d framework
+
 -Integrated controlles and the map
+
 -Create a class that handles car information
--manipulate information class and map with cocos 2d buttons
+
+-manipulate information class and map with cocoa buttons
+
+-Tweak car mechanics
+
+-Found a better way to rotate and display car
 
 What needs to be done in short term
 ===================================
--Tweak car mechanics
--Find a better way to rotate and display car
+
+-move map with car's movement
 
 What needs to be done in the mid term
 =====================================
--Add restrictions to map via reverse geocoding
+-Add restrictions to map via reverse geocoding -> changed to using color of pixels instead
+  -add crashes to car class update method
 
 What needs to be done in the long term
 ======================================
--Main menu
--Sound
 -Time Trials
+  -gameplay
+  -records/saved tracks
+-Main menu
+  -scroll menu with options
+-Sound
+  -allow to use ipod/pandora music
+  -default sound effects
+-Options menu
+  -allow to change default sounds
+-Spedometer
+
+
 
