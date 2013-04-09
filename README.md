@@ -42,14 +42,18 @@ What needs to be done in the long term
 -Time Trials
   -gameplay
   -records/saved tracks
+  
 -Main menu
   -scroll menu with options
+  
 -Sound
   -allow to use ipod/pandora music
   -default sound effects
+  
 -Options menu
   -allow to change default sounds
--Spedometer
+  
+-Speedometer
 
 
 
