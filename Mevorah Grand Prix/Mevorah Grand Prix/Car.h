@@ -44,6 +44,11 @@
 
 -(void)updateValues;
 
+-(void)cameraMoved:(CGPoint)position;
+
+
+-(BOOL)crashedAtPoint:(CGRect)point;
+
 -(void)accellerate;
 -(void)reverse;
 -(void)turnLeft;

@@ -56,10 +56,30 @@
     [self.layer addAnimation:rotation forKey:@"angle"];
     
         
+    
     self.frame = CGRectMake(locationX,
                             locationY,
                             self.frame.size.width,
                             self.frame.size.height);
+}
+
+-(void)cameraMoved:(CGPoint)position{
+    if(position.x == 1){
+        NSLog(@"Top");
+        locationY = 260;
+    }else if(position.x == -1){
+        NSLog(@"Bottom");
+        locationY = 40;
+    }else if(position.y == 1){
+        locationX = 420;
+    }else{
+        locationX = 40;
+    }
+    self.frame = CGRectMake(locationX, locationY, self.frame.size.width, self.frame.size.height);    
+}
+
+-(BOOL)crashedAtPoint:(CGRect)point{
+
 }
 
 -(void)accellerate{

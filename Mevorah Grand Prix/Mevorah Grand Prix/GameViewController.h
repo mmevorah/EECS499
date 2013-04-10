@@ -13,12 +13,19 @@
 @interface GameViewController :UIViewController{
     float checkPixelInterval;
     
+    CLLocationCoordinate2D cameraPosition;
+    float moveDistance;
+    
     Car *car;
+    
+    NSArray *bounds;
 }
 
 
 
 @property(strong, nonatomic) Car *car;
+
+@property(strong, nonatomic) NSArray *bounds;
 
 @property(strong, nonatomic) NSTimer *clock;
 

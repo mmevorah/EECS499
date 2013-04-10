@@ -46,10 +46,9 @@
 		ED47C76A170791E7006A7087 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C769170791E7006A7087 /* libstdc++.dylib */; };
 		EDA280C3170F53EF00CC3FAA /* carA.ai in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C1170F53EF00CC3FAA /* carA.ai */; };
 		EDA280C4170F53EF00CC3FAA /* carA.ai in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C1170F53EF00CC3FAA /* carA.ai */; };
-		EDA280C5170F53EF00CC3FAA /* carA.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C2170F53EF00CC3FAA /* carA.png */; };
-		EDA280C6170F53EF00CC3FAA /* carA.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C2170F53EF00CC3FAA /* carA.png */; };
 		EDA280C9170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
 		EDA280CA170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
+		EDB0E16D17139B4900D63E36 /* carA-01.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB0E16C17139B4900D63E36 /* carA-01.png */; };
 		EDE0411C1710CC6B00B2BA3E /* UIViewColorOfPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */; };
 /* End PBXBuildFile section */
 
@@ -105,9 +104,9 @@
 		ED47C767170791CE006A7087 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ED47C769170791E7006A7087 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		EDA280C1170F53EF00CC3FAA /* carA.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = carA.ai; sourceTree = "<group>"; };
-		EDA280C2170F53EF00CC3FAA /* carA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carA.png; sourceTree = "<group>"; };
 		EDA280C7170F5AEF00CC3FAA /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		EDA280C8170F5AEF00CC3FAA /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		EDB0E16C17139B4900D63E36 /* carA-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carA-01.png"; sourceTree = "<group>"; };
 		EDE0411A1710CC6B00B2BA3E /* UIViewColorOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewColorOfPoint.h; sourceTree = "<group>"; };
 		EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewColorOfPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,7 +252,7 @@
 				ED0BDEAF1713766000021F3E /* logo-01.png */,
 				ED0BDEB01713766000021F3E /* logo.ai */,
 				EDA280C1170F53EF00CC3FAA /* carA.ai */,
-				EDA280C2170F53EF00CC3FAA /* carA.png */,
+				EDB0E16C17139B4900D63E36 /* carA-01.png */,
 			);
 			path = graphics;
 			sourceTree = "<group>";
@@ -336,9 +335,9 @@
 				ED0D6DD9170538E7005D54D2 /* MainStoryboard.storyboard in Resources */,
 				ED47C74F17079174006A7087 /* GoogleMaps.bundle in Resources */,
 				EDA280C3170F53EF00CC3FAA /* carA.ai in Resources */,
-				EDA280C5170F53EF00CC3FAA /* carA.png in Resources */,
 				ED0BDEB11713766000021F3E /* logo-01.png in Resources */,
 				ED0BDEB21713766000021F3E /* logo.ai in Resources */,
+				EDB0E16D17139B4900D63E36 /* carA-01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +348,6 @@
 				ED0D6DEE170538E7005D54D2 /* InfoPlist.strings in Resources */,
 				ED47C75017079174006A7087 /* GoogleMaps.bundle in Resources */,
 				EDA280C4170F53EF00CC3FAA /* carA.ai in Resources */,
-				EDA280C6170F53EF00CC3FAA /* carA.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

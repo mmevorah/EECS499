@@ -21,6 +21,7 @@
 @synthesize camera;
 
 @synthesize car = car_;
+@synthesize bounds;
 
 @synthesize accellerateButton;
 @synthesize reverseButton;
@@ -39,23 +40,23 @@
 {
     [super viewDidLoad];
 
-    double latitude = 42.271291;
-    double longitude = -83.729918;
-    double bearing = 0;
-    
+    cameraPosition = CLLocationCoordinate2DMake(42.271291, -83.729918);
+    moveDistance = .00055;
+
     checkPixelInterval = 0;
     
-    camera = [GMSCameraPosition cameraWithLatitude:latitude
-                                                            longitude:longitude                                                              zoom:19
-                                                              bearing:bearing
-                                                         viewingAngle:0];
+    camera = [GMSCameraPosition cameraWithLatitude:cameraPosition.latitude
+                                        longitude:cameraPosition.longitude
+                                              zoom:19
+                                           bearing:0
+                                      viewingAngle:0];
     
     
     mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, 0, 480, 300) camera:camera];
     mapView_.myLocationEnabled = NO;
     [self.view addSubview:mapView_];
     [self.view addSubview:controllerView];
-    car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 10, 20) withImage:[UIImage imageNamed:@"carA.png"]];
+    car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 7, 13) withImage:[UIImage imageNamed:@"carA-01.png"]];
     [self.view addSubview:car_];
     clock = [NSTimer scheduledTimerWithTimeInterval:(1/20)
                                              target:self
@@ -76,13 +77,35 @@
     checkPixelInterval++;
     if(checkPixelInterval == 40){
         checkPixelInterval = 0;
-        [self.view colorOfPoint:CGPointMake(240, 150)];
+    //    UIColor *color = [self.view colorOfPoint:CGPointMake(car_.frame.origin.x, car_.frame.origin.y-(car_.frame.size.height/2)-1)];
+        for(int i = 0; i < bounds.count; i++){
+        }
+    }
+    
+    
+    if(car_.frame.origin.y <= 40){
+        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude + moveDistance, cameraPosition.longitude);
+        [self moveCamera:CGPointMake(1, 0)];
+    }else if(car_.frame.origin.y >= 260){
+        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude - moveDistance, cameraPosition.longitude);
+        [self moveCamera:CGPointMake(-1, 0)];
+    }else if(car_.frame.origin.x <= 40){
+        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude, cameraPosition.longitude - moveDistance);
+        [self moveCamera:CGPointMake(0, 1)];
+    }else if(car_.frame.origin.x >= 420){
+        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude, cameraPosition.longitude + moveDistance);
+        [self moveCamera:CGPointMake(0, -1)];
     }
     
     [car_ updateValues];
     
 //    NSLog(@"Velocity X: %f, Velocity Y: %f", engine.velocityX, engine.velocityY);
   //  [mapView_ animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:engine.positionY longitude:engine.positionX zoom:18.5 bearing:engine.angle viewingAngle:0]];
+}
+
+-(void)moveCamera:(CGPoint)movement{
+    [mapView_ animateToLocation:cameraPosition];
+    [car_ cameraMoved:movement];
 }
 
 - (void)didReceiveMemoryWarning
