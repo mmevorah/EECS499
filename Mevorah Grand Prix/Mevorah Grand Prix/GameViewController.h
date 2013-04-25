@@ -12,7 +12,7 @@
 #include "Car.h"
 #include "carPool.h"
 
-@interface GameViewController :UIViewController{        
+@interface GameViewController :UIViewController<GMSMapViewDelegate>{
     CLLocationCoordinate2D cameraPosition;
     float moveDistance;
     
@@ -22,15 +22,17 @@
     carPool *carPool;
     
     //Game
-    //int total time (seconds)
-    //bool canMove
+    int totalTime;
+    int currentTime;
+    bool canMove;
     //location last safe location 
-    //int currentLevel
-    //int timer
-    //coord nextDestination //checked in the update function 
+    int level;
+    CLLocationCoordinate2D startLocation;
+    CLLocationCoordinate2D nextDestination;
     //then pass the current level to the carPool view to generate hazards when switch view
 }
 @property(strong, nonatomic) NSTimer *updateClock;
+@property(strong, nonatomic) NSTimer *gameTimer;
 
 @property(strong, nonatomic) carPool *game;
 @property(strong, nonatomic) Car *car;
@@ -43,9 +45,17 @@
 @property (strong, nonatomic) IBOutlet UIButton *rightButton;
 @property (strong, nonatomic) IBOutlet UIButton *leftButton;
 
+@property (strong, nonatomic) IBOutlet UIView *consoleView;
+
+
 //Game flow
 @property (strong, nonatomic) IBOutlet UILabel *consoleLabel;
+@property (strong, nonatomic) NSString *nextDestinationAddress;
+@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 //speed label
 //time label
+
+//Utility
+-(void)getLocationName:(CLLocationCoordinate2D)coordinate;
 
 @end
