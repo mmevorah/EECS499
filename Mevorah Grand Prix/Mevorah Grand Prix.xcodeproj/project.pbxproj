@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		ED0BDEB11713766000021F3E /* logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0BDEAF1713766000021F3E /* logo-01.png */; };
-		ED0BDEB21713766000021F3E /* logo.ai in Resources */ = {isa = PBXBuildFile; fileRef = ED0BDEB01713766000021F3E /* logo.ai */; };
 		ED0D6DC0170538E7005D54D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DBF170538E7005D54D2 /* UIKit.framework */; };
 		ED0D6DC2170538E7005D54D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC1170538E7005D54D2 /* Foundation.framework */; };
 		ED0D6DC4170538E7005D54D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC3170538E7005D54D2 /* CoreGraphics.framework */; };
@@ -44,11 +43,15 @@
 		ED47C766170791CA006A7087 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C765170791CA006A7087 /* QuartzCore.framework */; };
 		ED47C768170791CE006A7087 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C767170791CE006A7087 /* SystemConfiguration.framework */; };
 		ED47C76A170791E7006A7087 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED47C769170791E7006A7087 /* libstdc++.dylib */; };
-		EDA280C3170F53EF00CC3FAA /* carA.ai in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C1170F53EF00CC3FAA /* carA.ai */; };
-		EDA280C4170F53EF00CC3FAA /* carA.ai in Resources */ = {isa = PBXBuildFile; fileRef = EDA280C1170F53EF00CC3FAA /* carA.ai */; };
+		ED5B3EAF1719F99900191A7F /* breakPedal-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED5B3EAE1719F99900191A7F /* breakPedal-01.png */; };
+		ED6370C517219D1600F80DE1 /* UIImageColorOfPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6370C417219D1600F80DE1 /* UIImageColorOfPoint.m */; };
+		ED6C6F7D17189F17001626BF /* gasPedal-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6C6F7C17189F17001626BF /* gasPedal-01.png */; };
+		ED80853F17206432005E6363 /* border-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED80853E17206432005E6363 /* border-01.png */; };
+		ED808541172064D4005E6363 /* carA-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED808540172064D4005E6363 /* carA-01.png */; };
+		ED831E0417287889007E6454 /* carPool.m in Sources */ = {isa = PBXBuildFile; fileRef = ED831E0317287889007E6454 /* carPool.m */; };
 		EDA280C9170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
 		EDA280CA170F5AF000CC3FAA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA280C8170F5AEF00CC3FAA /* Car.m */; };
-		EDB0E16D17139B4900D63E36 /* carA-01.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB0E16C17139B4900D63E36 /* carA-01.png */; };
+		EDBF442C171525D700B0F01E /* mainmenu-01.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBF442B171525D700B0F01E /* mainmenu-01.png */; };
 		EDE0411C1710CC6B00B2BA3E /* UIViewColorOfPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +67,6 @@
 
 /* Begin PBXFileReference section */
 		ED0BDEAF1713766000021F3E /* logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-01.png"; sourceTree = "<group>"; };
-		ED0BDEB01713766000021F3E /* logo.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = logo.ai; sourceTree = "<group>"; };
 		ED0D6DBC170538E7005D54D2 /* Mevorah Grand Prix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mevorah Grand Prix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0D6DBF170538E7005D54D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ED0D6DC1170538E7005D54D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,10 +105,17 @@
 		ED47C765170791CA006A7087 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED47C767170791CE006A7087 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ED47C769170791E7006A7087 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		EDA280C1170F53EF00CC3FAA /* carA.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = carA.ai; sourceTree = "<group>"; };
+		ED5B3EAE1719F99900191A7F /* breakPedal-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "breakPedal-01.png"; sourceTree = "<group>"; };
+		ED6370C317219D1600F80DE1 /* UIImageColorOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageColorOfPoint.h; sourceTree = "<group>"; };
+		ED6370C417219D1600F80DE1 /* UIImageColorOfPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageColorOfPoint.m; sourceTree = "<group>"; };
+		ED6C6F7C17189F17001626BF /* gasPedal-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gasPedal-01.png"; sourceTree = "<group>"; };
+		ED80853E17206432005E6363 /* border-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "border-01.png"; sourceTree = "<group>"; };
+		ED808540172064D4005E6363 /* carA-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carA-01.png"; sourceTree = "<group>"; };
+		ED831E0217287889007E6454 /* carPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carPool.h; sourceTree = "<group>"; };
+		ED831E0317287889007E6454 /* carPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carPool.m; sourceTree = "<group>"; };
 		EDA280C7170F5AEF00CC3FAA /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		EDA280C8170F5AEF00CC3FAA /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
-		EDB0E16C17139B4900D63E36 /* carA-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carA-01.png"; sourceTree = "<group>"; };
+		EDBF442B171525D700B0F01E /* mainmenu-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-01.png"; sourceTree = "<group>"; };
 		EDE0411A1710CC6B00B2BA3E /* UIViewColorOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewColorOfPoint.h; sourceTree = "<group>"; };
 		EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewColorOfPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +212,8 @@
 				ED47C71D1707868A006A7087 /* MainMenuViewController.m */,
 				ED47C723170786F6006A7087 /* GameViewController.h */,
 				ED47C724170786F6006A7087 /* GameViewController.m */,
+				ED831E0217287889007E6454 /* carPool.h */,
+				ED831E0317287889007E6454 /* carPool.m */,
 				EDA280C7170F5AEF00CC3FAA /* Car.h */,
 				EDA280C8170F5AEF00CC3FAA /* Car.m */,
 				ED0D6DC6170538E7005D54D2 /* Supporting Files */,
@@ -223,6 +234,8 @@
 				ED0D6DD5170538E7005D54D2 /* Default-568h@2x.png */,
 				EDE0411A1710CC6B00B2BA3E /* UIViewColorOfPoint.h */,
 				EDE0411B1710CC6B00B2BA3E /* UIViewColorOfPoint.m */,
+				ED6370C317219D1600F80DE1 /* UIImageColorOfPoint.h */,
+				ED6370C417219D1600F80DE1 /* UIImageColorOfPoint.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,10 +262,12 @@
 		EDA280C0170F53EF00CC3FAA /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				ED808540172064D4005E6363 /* carA-01.png */,
+				ED6C6F7C17189F17001626BF /* gasPedal-01.png */,
+				ED5B3EAE1719F99900191A7F /* breakPedal-01.png */,
+				EDBF442B171525D700B0F01E /* mainmenu-01.png */,
 				ED0BDEAF1713766000021F3E /* logo-01.png */,
-				ED0BDEB01713766000021F3E /* logo.ai */,
-				EDA280C1170F53EF00CC3FAA /* carA.ai */,
-				EDB0E16C17139B4900D63E36 /* carA-01.png */,
+				ED80853E17206432005E6363 /* border-01.png */,
 			);
 			path = graphics;
 			sourceTree = "<group>";
@@ -334,10 +349,12 @@
 				ED0D6DD6170538E7005D54D2 /* Default-568h@2x.png in Resources */,
 				ED0D6DD9170538E7005D54D2 /* MainStoryboard.storyboard in Resources */,
 				ED47C74F17079174006A7087 /* GoogleMaps.bundle in Resources */,
-				EDA280C3170F53EF00CC3FAA /* carA.ai in Resources */,
 				ED0BDEB11713766000021F3E /* logo-01.png in Resources */,
-				ED0BDEB21713766000021F3E /* logo.ai in Resources */,
-				EDB0E16D17139B4900D63E36 /* carA-01.png in Resources */,
+				EDBF442C171525D700B0F01E /* mainmenu-01.png in Resources */,
+				ED6C6F7D17189F17001626BF /* gasPedal-01.png in Resources */,
+				ED5B3EAF1719F99900191A7F /* breakPedal-01.png in Resources */,
+				ED80853F17206432005E6363 /* border-01.png in Resources */,
+				ED808541172064D4005E6363 /* carA-01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +364,6 @@
 			files = (
 				ED0D6DEE170538E7005D54D2 /* InfoPlist.strings in Resources */,
 				ED47C75017079174006A7087 /* GoogleMaps.bundle in Resources */,
-				EDA280C4170F53EF00CC3FAA /* carA.ai in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +396,8 @@
 				ED47C725170786F6006A7087 /* GameViewController.m in Sources */,
 				EDA280C9170F5AF000CC3FAA /* Car.m in Sources */,
 				EDE0411C1710CC6B00B2BA3E /* UIViewColorOfPoint.m in Sources */,
+				ED6370C517219D1600F80DE1 /* UIImageColorOfPoint.m in Sources */,
+				ED831E0417287889007E6454 /* carPool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

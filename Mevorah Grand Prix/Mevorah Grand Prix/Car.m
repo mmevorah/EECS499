@@ -10,6 +10,9 @@
 
 @implementation Car
 @synthesize image = image_;
+@synthesize intersectionPt;
+
+@synthesize front, back, left, right;
 
 - (id)initWithFrame:(CGRect)frame withImage:(UIImage*)image
 {
@@ -17,17 +20,27 @@
     if (self) {
         image_ = [[UIImageView alloc] initWithImage:image];
         [self addSubview:image_];
-        self.layer.anchorPoint = CGPointMake(.5, 1);   //fuck around with this
+        self.layer.anchorPoint = CGPointMake(0.5, .5);   //fuck around with this
         
         locationX = frame.origin.x;
         locationY = frame.origin.y;
+        
+        halfHeight = (frame.size.height/2);
+        halfWidth = (frame.size.width/2);
+        offSet = 2;
+        
+        front = CGPointMake(frame.origin.x, frame.origin.y - halfHeight - offSet);
+        back = CGPointMake(frame.origin.x, frame.origin.y + halfHeight + offSet);
+        left = CGPointMake(frame.origin.x - halfWidth - offSet, frame.origin.y);
+        right = CGPointMake(frame.origin.x + halfWidth + offSet, frame.origin.y);
+        
         angle = 0;
         
         velocityX = 0;
         velocityY = 0;
         angularVelocity = 0;
         
-        power = .00005;
+        power = .00007;
         turnSpeed = .00035;
         drag = .999;
         angularDrag = .995;
@@ -41,21 +54,29 @@
     
     velocityX *= drag;
     velocityY *= drag;
+    
     locationX += velocityX;
     locationY += velocityY;
-        
+    
     CABasicAnimation *rotation;
     rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     rotation.fromValue = [NSNumber numberWithFloat:angle];
     
     angle += angularVelocity;
     angularVelocity *= angularDrag;
-    
     rotation.toValue = [NSNumber numberWithFloat:angle];
     rotation.duration = (1/20);
     [self.layer addAnimation:rotation forKey:@"angle"];
     
-        
+    front.x = self.frame.origin.x + (halfHeight + offSet)*sin(angle);
+    front.y = self.frame.origin.y - (halfHeight + offSet)*cos(angle);
+  //  back.x = self.frame.origin.x - (halfHeight + offSet)*sin(angle);
+  //  back.y = self.frame.origin.y + (halfHeight + offSet)*cos(angle);
+    
+    
+    //NSLog(@"angle: %f", angle);
+    //NSLog(@"front: x: %f, y: %f", front.x, front.y);
+    
     
     self.frame = CGRectMake(locationX,
                             locationY,
@@ -78,10 +99,6 @@
     self.frame = CGRectMake(locationX, locationY, self.frame.size.width, self.frame.size.height);    
 }
 
--(BOOL)crashedAtPoint:(CGRect)point{
-
-}
-
 -(void)accellerate{
     velocityX -= -sin(angle) * power;
     velocityY -= cos(angle) * power;
@@ -100,37 +117,5 @@
 -(void)turnRight{
     angularVelocity += turnSpeed*sqrt(velocityX*velocityX + velocityY*velocityY);
 }
-
-
-
-
-
-/*
-frontWheelX = carLocationX + wheelBase/2 * cos(carHeading);
-frontWheelY = carLocationY + wheelBase/2 * sin(carHeading);
-
-backWheelX = carLocationX - wheelBase/2 * cos(carHeading);
-backWheelY = carLocationY - wheelBase/2 * sin(carHeading);
-
-backWheelX += carSpeed * dt * cos(carHeading);
-backWheelY += carSpeed * dt * sin(carHeading);
-
-frontWheelX += carSpeed * dt * cos(carHeading+steerAngle);
-frontWheelY += carSpeed * dt * sin(carHeading+steerAngle);
-
-carLocationX = (frontWheelX + backWheelX) / 2;
-carLocationY = (frontWheelY + backWheelY) / 2;
-
-carHeading = atan2( frontWheelY - backWheelY , frontWheelX - backWheelX );
-*/
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

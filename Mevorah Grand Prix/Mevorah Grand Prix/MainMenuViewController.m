@@ -35,4 +35,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)carPoolHit:(UIButton *)sender {
+    //segue to game somehow pass a bool
+    
+}
 @end

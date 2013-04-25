@@ -15,11 +15,13 @@
     CGFloat locationX;
     CGFloat locationY;
     
-    CGFloat frontWheelX;
-    CGFloat frontWheelY;
-    CGFloat backWheelX;
-    CGFloat backWheelY;
-    
+    CGFloat halfHeight;
+    CGFloat halfWidth;
+    int offSet;
+    CGPoint front;
+    CGPoint back;
+    CGPoint left;
+    CGPoint right;
     
     CGFloat velocityX;
     CGFloat velocityY;
@@ -41,6 +43,13 @@
 - (id)initWithFrame:(CGRect)frame withImage:(UIImage*)image;
 
 @property(strong, nonatomic) UIImageView* image;
+
+@property(strong, nonatomic) UIView* intersectionPt;
+
+@property CGPoint front;
+@property CGPoint back;
+@property CGPoint left;
+@property CGPoint right;
 
 -(void)updateValues;
 

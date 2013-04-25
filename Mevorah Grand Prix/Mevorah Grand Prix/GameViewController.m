@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "UIViewColorOfPoint.h"
+#import "UIImageColorOfPoint.h"
 
 @interface GameViewController ()
 
@@ -16,12 +17,12 @@
 @implementation GameViewController{
     GMSMapView *mapView_;
 }
+
 @synthesize controllerView;
-@synthesize clock;
+@synthesize updateClock;
 @synthesize camera;
 
 @synthesize car = car_;
-@synthesize bounds;
 
 @synthesize accellerateButton;
 @synthesize reverseButton;
@@ -36,52 +37,128 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    //Start Zoomed Out
+    
     cameraPosition = CLLocationCoordinate2DMake(42.271291, -83.729918);
     moveDistance = .00055;
-
-    checkPixelInterval = 0;
-    
     camera = [GMSCameraPosition cameraWithLatitude:cameraPosition.latitude
                                         longitude:cameraPosition.longitude
                                               zoom:19
                                            bearing:0
                                       viewingAngle:0];
     
-    
     mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, 0, 480, 300) camera:camera];
     mapView_.myLocationEnabled = NO;
+    
     [self.view addSubview:mapView_];
-    [self.view addSubview:controllerView];
-    car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 7, 13) withImage:[UIImage imageNamed:@"carA-01.png"]];
+    
+    car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 13, 29) withImage:[UIImage imageNamed:@"carA-01.png"]];
     [self.view addSubview:car_];
-    clock = [NSTimer scheduledTimerWithTimeInterval:(1/20)
+    
+    [self.view addSubview:controllerView];
+
+    updateClock = [NSTimer scheduledTimerWithTimeInterval:(1/20)
                                              target:self
                                            selector:@selector(update)
                                            userInfo:nil
                                             repeats:YES];
     
-    
-
+    [self performSelector:@selector(chooseStartLocation)];
 }
 
+-(void)chooseStartLocation{
+    //Wait for touch event
+    //break
+    //Record loction of touch, get long and lat
+    //animate to that camera position, long, lat, zoom 19
+    //begin update clock
+    
+    //if free ride
+    //console prints enjoy
+    
+   // if(playing){
+   //     [self performSelector:@selector(startGame) withObject:nil afterDelay:1];
+   // }
+}
+
+-(void)startGame{
+    //set first destination
+    //calculate direction ahead to the right
+    
+    //call reset values
+    //perform stop light animation
+    //start updating
+}
+
+/*
+-(void)setDestination{
+    pause clock
+    print in console "you made it to your location"
+    pause two seconds
+    take the current destination and generate new location based off this
+    print "now go to  [destination]" to console, adress through reverse geocoding
+    increase level by one
+    increase clock time
+    increase total time by same amount
+    delay 2 seconds
+    start clock again
+ }
+*/
+
+/*
+-(void)crashed{
+    move to last safe location
+    car can move = false for three seconds
+ }
+*/
+ /*
+-(void)resetValues{
+ level = 0;
+ clock = starting clock time
+  total time = starting clock time
+ }
+*/
+
+/*
+-(void)gameOver{
+    call reset values
+    print message with total time
+    set zoom to be far out again
+    make button appear play again
+        button calls choose start location
+    or button go back to main menu
+ }
+*/
 -(void)update{
+    
+    //if(timer <= 0) call game over function
+    
+    /* if playing
+        update direction arrows in console view --> check car location relative to destination
+            show arrows based on this
+        
+        check a crash, if crash call crashed{
+            if level 0{ check hazardbox[0-8]
+            else if level 1{ checkhazardBoz[0-15]       
+                          2{                0-20
+                          3{                0-25
+        }
+     
+        update last safe location
+     
+        if car gets to destination, call get destination
+    */
+    //if(can Move){
     if(accellerateButton.state == UIControlStateHighlighted) [car_ accellerate];
     if(reverseButton.state == UIControlStateHighlighted) [car_ reverse];
     if(leftButton.state == UIControlStateHighlighted) [car_ turnLeft];
     if(rightButton.state == UIControlStateHighlighted) [car_ turnRight];
-    
-    checkPixelInterval++;
-    if(checkPixelInterval == 40){
-        checkPixelInterval = 0;
-    //    UIColor *color = [self.view colorOfPoint:CGPointMake(car_.frame.origin.x, car_.frame.origin.y-(car_.frame.size.height/2)-1)];
-        for(int i = 0; i < bounds.count; i++){
-        }
-    }
-    
+    //}
     
     if(car_.frame.origin.y <= 40){
         cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude + moveDistance, cameraPosition.longitude);
@@ -98,14 +175,12 @@
     }
     
     [car_ updateValues];
-    
-//    NSLog(@"Velocity X: %f, Velocity Y: %f", engine.velocityX, engine.velocityY);
-  //  [mapView_ animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:engine.positionY longitude:engine.positionX zoom:18.5 bearing:engine.angle viewingAngle:0]];
 }
 
 -(void)moveCamera:(CGPoint)movement{
     [mapView_ animateToLocation:cameraPosition];
     [car_ cameraMoved:movement];
+    //Call carPool update hazards (int currentLevel);
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,10 +188,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-- (IBAction)accellerate:(UIButton *)sender {
-    [car_ accellerate];
-}*/
 
 @end

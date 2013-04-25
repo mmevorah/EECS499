@@ -10,4 +10,6 @@
 
 @interface MainMenuViewController : UIViewController
 
+- (IBAction)carPoolHit:(UIButton *)sender;
+
 @end

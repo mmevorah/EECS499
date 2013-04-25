@@ -8,26 +8,32 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import <QuartzCore/QuartzCore.h>
 #include "Car.h"
+#include "carPool.h"
 
-@interface GameViewController :UIViewController{
-    float checkPixelInterval;
-    
+@interface GameViewController :UIViewController{        
     CLLocationCoordinate2D cameraPosition;
     float moveDistance;
     
     Car *car;
     
-    NSArray *bounds;
+    bool playing;
+    carPool *carPool;
+    
+    //Game
+    //int total time (seconds)
+    //bool canMove
+    //location last safe location 
+    //int currentLevel
+    //int timer
+    //coord nextDestination //checked in the update function 
+    //then pass the current level to the carPool view to generate hazards when switch view
 }
+@property(strong, nonatomic) NSTimer *updateClock;
 
-
-
+@property(strong, nonatomic) carPool *game;
 @property(strong, nonatomic) Car *car;
-
-@property(strong, nonatomic) NSArray *bounds;
-
-@property(strong, nonatomic) NSTimer *clock;
 
 @property(strong, nonatomic) GMSCameraPosition *camera;
 
@@ -37,7 +43,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *rightButton;
 @property (strong, nonatomic) IBOutlet UIButton *leftButton;
 
-
-
+//Game flow
+@property (strong, nonatomic) IBOutlet UILabel *consoleLabel;
+//speed label
+//time label
 
 @end
