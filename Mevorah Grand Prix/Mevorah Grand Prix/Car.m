@@ -41,12 +41,12 @@
         velocityY = 0;
         angularVelocity = 0;
         
-        power = .00007;
-        turnSpeed = .00035;
-        drag = .999;
-        angularDrag = .995;
+        power = .0002;
+        turnSpeed = .0003;
+        drag = .9989;
+        angularDrag = .99;
         
-        timeItTakesToDriveAMile = 30; //time it takes to drive a mile
+        timeItTakesToDriveAMile = 70; //time it takes to drive a mile
     }
     return self;
 }

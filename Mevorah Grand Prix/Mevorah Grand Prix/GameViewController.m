@@ -58,7 +58,8 @@
     
     startLocation = CLLocationCoordinate2DMake(42.271291, -83.729918);
     cameraPosition = startLocation;
-    moveDistance = .00055;
+    moveDistanceY = .00055;
+    moveDistanceX = .0009;
     camera = [GMSCameraPosition cameraWithLatitude:cameraPosition.latitude
                                         longitude:cameraPosition.longitude
                                               zoom:15
@@ -77,6 +78,7 @@
     [self.view addSubview:mainMenuButton];
     
     playing = true; //change to be set
+    shouldTime = true;
 
     consoleLabel.text = @"Press a start location!";
 
@@ -94,6 +96,7 @@
     mapView_.userInteractionEnabled = false;
     startLocation = coordinate;
     cameraPosition = startLocation;
+    
     [mapView_ animateToCameraPosition:[GMSCameraPosition cameraWithTarget:coordinate
                                                                      zoom:19
                                                                   bearing:0
@@ -112,6 +115,9 @@
     [self resetValues];
     consoleLabel.text = @"Ready";
     nextDestination = [self setDestination];
+    GMSMarkerOptions *options = [GMSMarkerOptions options];
+    options.position = nextDestination;
+    [mapView_ addMarkerWithOptions:options];
     [self getLocationName:nextDestination];
     [self performSelector:@selector(preGame) withObject:nil afterDelay:5];
     canMove = true;
@@ -132,39 +138,52 @@
 }
 
 -(void)arrivedAtDestination{
-    [gameTimer invalidate];
+    shouldTime = false;
     gameTimer = nil;
+    
     canMove = false;
     consoleLabel.text = @"You made it!";
     
     nextDestination = [self setDestination];
+    
     GMSMarkerOptions *options = [GMSMarkerOptions options];
     options.position = nextDestination;
     [mapView_ addMarkerWithOptions:options];
+    
+    //zoom out to show next location
+    [mapView_ animateToZoom:15];
     //clock updated in above method
-    [self getLocationName:nextDestination];
+    
     level++;
-    [self performSelector:@selector(beginNextTrip) withObject:nil afterDelay:2];
+    car_.hidden = true;
+    [self getLocationName:nextDestination];
+    [self performSelector:@selector(beginNextTrip) withObject:nil afterDelay:8];
 }
 
 -(void)beginNextTrip{
+    //zoom back in
+    [mapView_ animateToZoom:19];
+    car_.hidden = false;
+    [mapView_ clear];
+    
+    GMSMarkerOptions *options = [GMSMarkerOptions options];
+    options.position = nextDestination;
+    [mapView_ addMarkerWithOptions:options];
+    
     consoleLabel.text = [NSString stringWithFormat:@"Ok, now go to %@!", nextDestinationAddress];
     canMove = true;
-    gameTimer = [NSTimer timerWithTimeInterval:1
-                                        target:self
-                                      selector:@selector(updateGameTimer)
-                                      userInfo:nil
-                                       repeats:YES];
+    shouldTime = true;
 }
+
+
 
 -(CLLocationCoordinate2D)setDestination{
     double i = arc4random_uniform(50);
-    double miles = (i/100)+.25;
+    double miles = (i/100)+.15;
     double distance = miles/69; //calculate magnitude in degrees
     int direction = arc4random_uniform(4);
     
-    currentTime += car_.timeItTakesToDriveAMile * miles + 5;
-    totalTime += car_.timeItTakesToDriveAMile * miles + 5;
+    currentTime += car_.timeItTakesToDriveAMile * miles + 10;
     CLLocationCoordinate2D coordinate;
     
     if(direction == 0){ //north
@@ -194,9 +213,8 @@
     int startingTime = 15;  //to be tweaked in game mechanics
     level = 0;
     currentTime =  startingTime;
-    totalTime = startingTime;
-    [gameTimer invalidate];
-    [updateClock invalidate];
+    totalTime = 0;
+    [mapView_ clear];
 }
 
 
@@ -204,6 +222,7 @@
     consoleLabel.text = [NSString stringWithFormat:@"Game Over, you lasted %i seconds", totalTime];
     [mapView_ animateToZoom:15];
     car_.hidden = true;
+    shouldTime = false;
     controllerView.hidden = true;
     mainMenuButton.hidden = false;
     mainMenuButton.enabled = true;
@@ -227,6 +246,12 @@
     [mapView_ animateToLocation:cameraPosition];
     [car_ cameraMoved:movement];
     //Call carPool update hazards (int currentLevel);
+    
+    
+    //MAKE THIS MORE SPECIFIC
+    double distFromDest = sqrt(pow(cameraPosition.latitude - nextDestination.latitude, 2) + pow(cameraPosition.longitude - nextDestination.longitude, 2));
+    NSLog(@"distFromDest: %f", distFromDest);
+    if(distFromDest < .0005) [self arrivedAtDestination];
 }
 
 -(void)update{
@@ -254,40 +279,44 @@
         if(reverseButton.state == UIControlStateHighlighted) [car_ reverse];
         if(leftButton.state == UIControlStateHighlighted) [car_ turnLeft];
         if(rightButton.state == UIControlStateHighlighted) [car_ turnRight];
+    
+    
+        
+        //NEED TO FIX THIS CAR MOVEMENT AND PIXEL-COORDINATE TRANSLATION
+        //SOO LOOK INTO MOVE DISTANCE
+        
+        if(car_.frame.origin.y <= 40){
+            cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude + moveDistanceY, cameraPosition.longitude);
+            [self moveCamera:CGPointMake(1, 0)];
+        }else if(car_.frame.origin.y >= 260){
+            cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude - moveDistanceY, cameraPosition.longitude);
+            [self moveCamera:CGPointMake(-1, 0)];
+        }else if(car_.frame.origin.x <= 40){
+            cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude, cameraPosition.longitude - moveDistanceX);
+            [self moveCamera:CGPointMake(0, 1)];
+        }else if(car_.frame.origin.x >= 420){
+            cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude, cameraPosition.longitude + moveDistanceX);
+            [self moveCamera:CGPointMake(0, -1)];
+        }
+        
+        [car_ updateValues];
     }
-    
-    
-    //NEED TO FIX THIS CAR MOVEMENT AND PIXEL-COORDINATE TRANSLATION
-    //SOO LOOK INTO MOVE DISTANCE
-    
-    if(car_.frame.origin.y <= 40){
-        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude + moveDistance, cameraPosition.longitude);
-        [self moveCamera:CGPointMake(1, 0)];
-    }else if(car_.frame.origin.y >= 260){
-        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude - moveDistance, cameraPosition.longitude);
-        [self moveCamera:CGPointMake(-1, 0)];
-    }else if(car_.frame.origin.x <= 40){
-        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude, cameraPosition.longitude - moveDistance);
-        [self moveCamera:CGPointMake(0, 1)];
-    }else if(car_.frame.origin.x >= 420){
-        cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude, cameraPosition.longitude + moveDistance);
-        [self moveCamera:CGPointMake(0, -1)];
-    }
-    
-    [car_ updateValues];
 }
 
 -(void)updateGameTimer{
-    currentTime -= 1;
-    int minutes = 0;
-    int seconds = 0;
-    if(currentTime >= 0){
-        minutes = (currentTime % 3600) / 60;
-        seconds = (currentTime %3600) % 60;
-        timerLabel.text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
-    }else{
-        timerLabel.text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
-        [self gameOver];
+    if(shouldTime){
+        totalTime++;
+        currentTime--;
+        int minutes = 0;
+        int seconds = 0;
+        if(currentTime >= 0){
+            minutes = (currentTime % 3600) / 60;
+            seconds = (currentTime %3600) % 60;
+            timerLabel.text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+        }else{
+            timerLabel.text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+            [self gameOver];
+        }
     }
 }
 

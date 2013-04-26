@@ -14,7 +14,8 @@
 
 @interface GameViewController :UIViewController<GMSMapViewDelegate>{
     CLLocationCoordinate2D cameraPosition;
-    float moveDistance;
+    float moveDistanceY;
+    float moveDistanceX;
     
     Car *car;
     
@@ -25,6 +26,7 @@
     int totalTime;
     int currentTime;
     bool canMove;
+    bool shouldTime;
     //location last safe location 
     int level;
     CLLocationCoordinate2D startLocation;
