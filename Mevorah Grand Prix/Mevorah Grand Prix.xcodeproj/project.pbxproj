@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		ED0BDEB11713766000021F3E /* logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0BDEAF1713766000021F3E /* logo-01.png */; };
+		ED0C2CF6172B0D0100EB4919 /* upArrow-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0C2CF5172B0D0100EB4919 /* upArrow-01.png */; };
+		ED0C2CF8172B0DB500EB4919 /* downArrow-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0C2CF7172B0DB500EB4919 /* downArrow-01.png */; };
+		ED0C2CFA172B0E6B00EB4919 /* leftArrow-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0C2CF9172B0E6B00EB4919 /* leftArrow-01.png */; };
+		ED0C2CFC172B0EF300EB4919 /* rightArrow-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0C2CFB172B0EF300EB4919 /* rightArrow-01.png */; };
 		ED0D6DC0170538E7005D54D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DBF170538E7005D54D2 /* UIKit.framework */; };
 		ED0D6DC2170538E7005D54D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC1170538E7005D54D2 /* Foundation.framework */; };
 		ED0D6DC4170538E7005D54D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC3170538E7005D54D2 /* CoreGraphics.framework */; };
@@ -67,6 +71,10 @@
 
 /* Begin PBXFileReference section */
 		ED0BDEAF1713766000021F3E /* logo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-01.png"; sourceTree = "<group>"; };
+		ED0C2CF5172B0D0100EB4919 /* upArrow-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upArrow-01.png"; sourceTree = "<group>"; };
+		ED0C2CF7172B0DB500EB4919 /* downArrow-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow-01.png"; sourceTree = "<group>"; };
+		ED0C2CF9172B0E6B00EB4919 /* leftArrow-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftArrow-01.png"; sourceTree = "<group>"; };
+		ED0C2CFB172B0EF300EB4919 /* rightArrow-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow-01.png"; sourceTree = "<group>"; };
 		ED0D6DBC170538E7005D54D2 /* Mevorah Grand Prix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mevorah Grand Prix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0D6DBF170538E7005D54D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ED0D6DC1170538E7005D54D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -262,6 +270,10 @@
 		EDA280C0170F53EF00CC3FAA /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				ED0C2CFB172B0EF300EB4919 /* rightArrow-01.png */,
+				ED0C2CF9172B0E6B00EB4919 /* leftArrow-01.png */,
+				ED0C2CF7172B0DB500EB4919 /* downArrow-01.png */,
+				ED0C2CF5172B0D0100EB4919 /* upArrow-01.png */,
 				ED808540172064D4005E6363 /* carA-01.png */,
 				ED6C6F7C17189F17001626BF /* gasPedal-01.png */,
 				ED5B3EAE1719F99900191A7F /* breakPedal-01.png */,
@@ -355,6 +367,10 @@
 				ED5B3EAF1719F99900191A7F /* breakPedal-01.png in Resources */,
 				ED80853F17206432005E6363 /* border-01.png in Resources */,
 				ED808541172064D4005E6363 /* carA-01.png in Resources */,
+				ED0C2CF6172B0D0100EB4919 /* upArrow-01.png in Resources */,
+				ED0C2CF8172B0DB500EB4919 /* downArrow-01.png in Resources */,
+				ED0C2CFA172B0E6B00EB4919 /* leftArrow-01.png in Resources */,
+				ED0C2CFC172B0EF300EB4919 /* rightArrow-01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

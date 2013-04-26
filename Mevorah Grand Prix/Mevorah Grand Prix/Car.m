@@ -11,6 +11,7 @@
 @implementation Car
 @synthesize image = image_;
 @synthesize intersectionPt;
+@synthesize timeItTakesToDriveAMile;
 
 @synthesize front, back, left, right;
 
@@ -45,6 +46,7 @@
         drag = .999;
         angularDrag = .995;
         
+        timeItTakesToDriveAMile = 30; //time it takes to drive a mile
     }
     return self;
 }

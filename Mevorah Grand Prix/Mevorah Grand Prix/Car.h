@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface Car : UIView{
-   
-    
+@interface Car : UIView{    
     CGFloat locationX;
     CGFloat locationY;
     
@@ -40,10 +38,11 @@
      CGFloat steerAngle;
  
 }
+@property(readonly) NSInteger timeItTakesToDriveAMile;
+
 - (id)initWithFrame:(CGRect)frame withImage:(UIImage*)image;
 
 @property(strong, nonatomic) UIImageView* image;
-
 @property(strong, nonatomic) UIView* intersectionPt;
 
 @property CGPoint front;
@@ -54,9 +53,6 @@
 -(void)updateValues;
 
 -(void)cameraMoved:(CGPoint)position;
-
-
--(BOOL)crashedAtPoint:(CGRect)point;
 
 -(void)accellerate;
 -(void)reverse;

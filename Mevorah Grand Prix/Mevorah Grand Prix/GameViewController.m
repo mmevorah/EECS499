@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "UIViewColorOfPoint.h"
 #import "UIImageColorOfPoint.h"
+#include <stdlib.h>
 
 @interface GameViewController ()
 
@@ -36,6 +37,9 @@
 @synthesize consoleLabel;
 @synthesize gameTimer;
 @synthesize timerLabel;
+
+@synthesize playAgainButton;
+@synthesize mainMenuButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,8 +71,10 @@
     geoCoder_ = [[GMSGeocoder alloc] init];
 
     car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 13, 29) withImage:[UIImage imageNamed:@"carA-01.png"]];
-    
+    car_.hidden = true;
+    [self.view addSubview:car_];
     [self.view addSubview:consoleView];
+    [self.view addSubview:mainMenuButton];
     
     playing = true; //change to be set
 
@@ -82,38 +88,37 @@
 //Add Crash
 //Add zoom in
 
-
--(void)newGame{
-    
-}
-
 #pragma mark - GMSMapViewDelegate
 
 -(void)mapView:(GMSMapView *)mapView didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate{
     mapView_.userInteractionEnabled = false;
     startLocation = coordinate;
+    cameraPosition = startLocation;
     [mapView_ animateToCameraPosition:[GMSCameraPosition cameraWithTarget:coordinate
                                                                      zoom:19
                                                                   bearing:0
                                                              viewingAngle:0]];
+    
+    [self.view addSubview:controllerView];
+    [self.view addSubview:playAgainButton];
 
     if(playing) [self performSelector:@selector(startGame) withObject:nil afterDelay:1];
 }
 
 -(void)startGame{
     canMove = false;
-    nextDestination = CLLocationCoordinate2DMake(42.272351, -83.72987); //need to change it to something relative to last location
-    [self.view addSubview:car_];
-    [self.view addSubview:controllerView];
+    car_.hidden = false;
+    controllerView.hidden = false;
     [self resetValues];
-    consoleLabel.text = @"Ready?!";
+    consoleLabel.text = @"Ready";
+    nextDestination = [self setDestination];
     [self getLocationName:nextDestination];
     [self performSelector:@selector(preGame) withObject:nil afterDelay:5];
     canMove = true;
 }
 
 -(void)preGame{
-    consoleLabel.text = [NSString stringWithFormat:@"Go to %@", nextDestinationAddress]; //Make go to location: determined by reverse geocoding
+    consoleLabel.text = [NSString stringWithFormat:@"Go to %@!", nextDestinationAddress];
     updateClock = [NSTimer scheduledTimerWithTimeInterval:(1/20)
                                                    target:self
                                                  selector:@selector(update)
@@ -126,23 +131,56 @@
                                                 repeats:YES];
 }
 
--(void)setDestination{
+-(void)arrivedAtDestination{
     [gameTimer invalidate];
     gameTimer = nil;
-    //reset timer at the current time
+    canMove = false;
+    consoleLabel.text = @"You made it!";
+    
+    nextDestination = [self setDestination];
+    GMSMarkerOptions *options = [GMSMarkerOptions options];
+    options.position = nextDestination;
+    [mapView_ addMarkerWithOptions:options];
+    //clock updated in above method
+    [self getLocationName:nextDestination];
+    level++;
+    [self performSelector:@selector(beginNextTrip) withObject:nil afterDelay:2];
+}
 
-    /*
-    print in console "you made it to your location"
-    pause two seconds
-    take the current destination and generate new location based off this
-    print "now go to  [destination]" to console, adress through reverse geocoding
-    increase level by one
-    increase clock time
-    increase total time by same amount
-    delay 2 seconds
-    start clock again
-     */
- }
+-(void)beginNextTrip{
+    consoleLabel.text = [NSString stringWithFormat:@"Ok, now go to %@!", nextDestinationAddress];
+    canMove = true;
+    gameTimer = [NSTimer timerWithTimeInterval:1
+                                        target:self
+                                      selector:@selector(updateGameTimer)
+                                      userInfo:nil
+                                       repeats:YES];
+}
+
+-(CLLocationCoordinate2D)setDestination{
+    double i = arc4random_uniform(50);
+    double miles = (i/100)+.25;
+    double distance = miles/69; //calculate magnitude in degrees
+    int direction = arc4random_uniform(4);
+    
+    currentTime += car_.timeItTakesToDriveAMile * miles + 5;
+    totalTime += car_.timeItTakesToDriveAMile * miles + 5;
+    CLLocationCoordinate2D coordinate;
+    
+    if(direction == 0){ //north
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude + distance, startLocation.longitude);
+    }else if(direction == 1){ //east
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude, startLocation.longitude + distance);
+    }else if(direction == 2){ //south
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude - distance, startLocation.longitude);
+    }else{ //west
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude, startLocation.longitude - distance);
+    }
+    
+    NSLog(@"Next Destination: Distance: %f, Direction:%i", miles, direction);
+    NSLog(@"Current Time: %i", currentTime);
+    return coordinate;
+}
 
 
 /*
@@ -153,21 +191,36 @@
 */
  
 -(void)resetValues{
-    int startingTime = 20;  //to be tweaked in game mechanics
+    int startingTime = 15;  //to be tweaked in game mechanics
     level = 0;
     currentTime =  startingTime;
     totalTime = startingTime;
+    [gameTimer invalidate];
+    [updateClock invalidate];
 }
-
 
 
 -(void)gameOver{
     consoleLabel.text = [NSString stringWithFormat:@"Game Over, you lasted %i seconds", totalTime];
-    //set zoom to be far out again
-    //make button appear play again
-        //button calls choose start location
-    //or button go back to main menu
+    [mapView_ animateToZoom:15];
+    car_.hidden = true;
+    controllerView.hidden = true;
+    mainMenuButton.hidden = false;
+    mainMenuButton.enabled = true;
+    playAgainButton.hidden = false;
+    playAgainButton.enabled = true;
  }
+
+- (IBAction)playAgainButton:(UIButton *)sender {
+    consoleLabel.text = @"Press a start location!";
+    timerLabel.text = @"";
+    playAgainButton.hidden = true;
+    mainMenuButton.hidden = true;
+    mapView_.userInteractionEnabled = true;
+    mainMenuButton.enabled =false;
+    playAgainButton.enabled = false;
+    [self resetValues];
+}
 
 
 -(void)moveCamera:(CGPoint)movement{
@@ -177,9 +230,12 @@
 }
 
 -(void)update{
+    
+    
     /* if playing
         update direction arrows in console view --> check car location relative to destination
             show arrows based on this
+     NEED to mae graphics fr this
         
         check a crash, if crash call crashed{
             if level 0{ check hazardbox[0-8]
@@ -192,7 +248,7 @@
      
         if car gets to destination, call get destination
     */
-    /*
+    
     if(canMove){
         if(accellerateButton.state == UIControlStateHighlighted) [car_ accellerate];
         if(reverseButton.state == UIControlStateHighlighted) [car_ reverse];
@@ -202,7 +258,6 @@
     
     
     //NEED TO FIX THIS CAR MOVEMENT AND PIXEL-COORDINATE TRANSLATION
-    //FIND OUT HOW MUCH A PIXEL AT THIS ZOOM LEVEL COMPARES TO A DEGREE
     //SOO LOOK INTO MOVE DISTANCE
     
     if(car_.frame.origin.y <= 40){
@@ -219,7 +274,7 @@
         [self moveCamera:CGPointMake(0, -1)];
     }
     
-    [car_ updateValues];*/
+    [car_ updateValues];
 }
 
 -(void)updateGameTimer{
@@ -255,5 +310,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

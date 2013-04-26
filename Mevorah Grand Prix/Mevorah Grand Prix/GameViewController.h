@@ -53,9 +53,16 @@
 @property (strong, nonatomic) NSString *nextDestinationAddress;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 //speed label
-//time label
 
 //Utility
 -(void)getLocationName:(CLLocationCoordinate2D)coordinate;
+-(CLLocationCoordinate2D)setDestination;
+
+
+//Game Over
+- (IBAction)playAgainButton:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIButton *playAgainButton;
+@property (strong, nonatomic) IBOutlet UIButton *mainMenuButton;
+
 
 @end
