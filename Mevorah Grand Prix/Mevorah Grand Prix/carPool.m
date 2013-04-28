@@ -17,7 +17,23 @@
         // Initialization code
     }
     
-    NSLog(@"init");
+    UIImageView *obj1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj4 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj5 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj6 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj7 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj8 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj9 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIImageView *obj10 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+
+    UFOArray = [[NSArray alloc] initWithObjects:obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10, nil];
+
+    for(int i = 0; i < [UFOArray count]; i++){
+        UIImageView *foo = [UFOArray objectAtIndex:i];
+       // foo.image =
+    }
     
     return self;
 }

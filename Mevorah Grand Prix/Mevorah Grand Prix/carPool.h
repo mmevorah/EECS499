@@ -10,7 +10,7 @@
 
 @interface carPool : UIView
 {
-    NSArray *hazardBox; //Contains cgrects of the locations and sizes of the boxes
+    NSArray *UFOArray; //Contains cgrects of the locations and sizes of the boxes
 }
 
 -(void)switchedView:(int) level;

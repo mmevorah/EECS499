@@ -42,14 +42,15 @@
         angularVelocity = 0;
         
         power = .0002;
-        turnSpeed = .0003;
+        turnSpeed = .00025;
         drag = .9989;
         angularDrag = .99;
         
-        timeItTakesToDriveAMile = 70; //time it takes to drive a mile
+        timeItTakesToDriveAMile = 55; //time it takes to drive a mile
     }
     return self;
 }
+
 -(void)updateValues{
     
    // NSLog(@"LocX: %f, LocY: %f", locationX, locationY);

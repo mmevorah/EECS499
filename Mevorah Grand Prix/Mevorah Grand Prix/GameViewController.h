@@ -31,6 +31,7 @@
     int level;
     CLLocationCoordinate2D startLocation;
     CLLocationCoordinate2D nextDestination;
+    CGRect nextDestinationBounds;
     //then pass the current level to the carPool view to generate hazards when switch view
 }
 @property(strong, nonatomic) NSTimer *updateClock;
@@ -51,14 +52,18 @@
 
 
 //Game flow
-@property (strong, nonatomic) IBOutlet UILabel *consoleLabel;
 @property (strong, nonatomic) NSString *nextDestinationAddress;
+@property (strong, nonatomic) IBOutlet UILabel *consoleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
+@property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *directionLabel;
+
 //speed label
 
 //Utility
 -(void)getLocationName:(CLLocationCoordinate2D)coordinate;
 -(CLLocationCoordinate2D)setDestination;
+-(void)generateDirection;
 
 
 //Game Over
