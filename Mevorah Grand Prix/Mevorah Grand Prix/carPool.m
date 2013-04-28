@@ -43,9 +43,9 @@
         [[hazards objectAtIndex:i] removeFromSuperview];
     }
     
-    int a = 420;
+    int a = 400;
     int b = 80;
-    int c = 290;
+    int c = 250;
     int d = 80;
     int e = 35;
     int f = 40;

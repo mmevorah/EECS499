@@ -72,8 +72,8 @@
     {
         NSLog(@"[COULD NO FIND PLIST For ID Manager] CREATING A NEW ONE");
         highScores = [[NSMutableArray alloc] init];
-        highScore = [[NSNumber alloc] initWithInt:0];
-        highScoreName = [[NSString alloc] initWithFormat:@"Mark Mevorah"];
+        highScore = [[NSNumber alloc] initWithInt:20];
+        highScoreName = @"Mark Mevorah";
         [highScores addObject:highScore];
         [highScores addObject:highScoreName];
     }
@@ -108,11 +108,12 @@
     car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 20, 40) withImage:[UIImage imageNamed:@"zeppelin-01.png"]];
     car_.hidden = true;
     
-    game = [[carPool alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height)];
+    game = [[carPool alloc] initWithFrame:CGRectMake(0, 0, 480, 300)];
         
     [self.view addSubview:consoleView];
     
     consoleLabel.text = @"Press a start location!";
+    livesLabel.text = [NSString stringWithFormat:@"HS: %i", [highScore integerValue]];
     
     lives = 3;
     justCrashed = false;
@@ -138,8 +139,8 @@
                                                                      zoom:19
                                                                   bearing:0
                                                              viewingAngle:0]];
-    [self.view addSubview:game];
     [self.view addSubview:car_];
+    [self.view addSubview:game];
     [self.view addSubview:controllerView];
     [self.view addSubview:playAgainButton];
 
@@ -207,7 +208,8 @@
     //zoom back in
     [mapView_ animateToZoom:19];
     car_.hidden = false;
-    game.hidden = false;
+    game.hidden = true;
+    justCrashed = true;
     [mapView_ clear];
     
     GMSMarkerOptions *options = [GMSMarkerOptions options];
@@ -265,6 +267,10 @@
     consoleLabel.text = @"CRASHED!";
     shouldTime = false;
     canMove = false;
+    
+    car_.velocityX = 0;
+    car_.velocityY = 0;
+    
     lives--;
     justCrashed = true;
     game.hidden = true;
@@ -307,12 +313,14 @@
     directionLabel.text = @"";
     timerLabel.text = @"";
     livesLabel.text = @"";
+    
+    [car_ reset];
 
     shouldTime = false;
    
     int blah = [highScore integerValue];
     if(totalTime > blah){
-        [self highScore];
+        [self performSelector:@selector(highScore) withObject:nil afterDelay:5];
     }else{
         playAgainButton.hidden = false;
         playAgainButton.enabled = true;
@@ -321,6 +329,8 @@
 
 - (IBAction)playAgainButton:(UIButton *)sender {
     consoleLabel.text = @"Press a start location!";
+    livesLabel.text = [NSString stringWithFormat:@"HS %i", [highScore integerValue]];
+
     timerLabel.text = @"";
     
     playAgainButton.hidden = true;
@@ -342,13 +352,15 @@
     saveButton.hidden = false;
         
     NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
-    NSString *plistPath = [docDir stringByAppendingPathComponent:@"productID.plist"];
+    NSString *plistPath = [docDir stringByAppendingPathComponent:@"highScore.plist"];
     
     NSLog(@"Highscore contains: %@", highScores);
     NSNumber *foo = [NSNumber numberWithInt:totalTime];
-    [highScores replaceObjectAtIndex:0 withObject:foo];
+    highScore = foo;
+    [highScores replaceObjectAtIndex:0 withObject:highScore];
     
     NSString *name = nameInput.text;
+    nameInput.text = @"";
     [highScores replaceObjectAtIndex:1 withObject:name];
     
     [highScores writeToFile:plistPath atomically:YES];
@@ -419,10 +431,10 @@
         if(!justCrashed){
             for(int i = 0; i < [game.hazards count]; i++){
                 UIImageView *foo = [game.hazards objectAtIndex:i];
-                if((car_.frame.origin.x < (foo.frame.origin.x + foo.frame.size.width)) &&
-                   (car_.frame.origin.x > (foo.frame.origin.x)) &&
-                   (car_.frame.origin.y < (foo.frame.origin.y + foo.frame.size.height)) &&
-                   (car_.frame.origin.y > (foo.frame.origin.y))){
+                if(((car_.frame.origin.x + (car_.frame.size.width/2)) < (foo.frame.origin.x + foo.frame.size.width)) &&
+                   ((car_.frame.origin.x + (car_.frame.size.width/2)) > (foo.frame.origin.x)) &&
+                   ((car_.frame.origin.y + (car_.frame.size.height/2)) < (foo.frame.origin.y + foo.frame.size.height)) &&
+                   ((car_.frame.origin.y + (car_.frame.size.height/2)) > (foo.frame.origin.y))){
                     [self crashed];
                 }
             }

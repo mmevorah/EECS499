@@ -38,6 +38,10 @@
      CGFloat steerAngle;
  
 }
+
+@property CGFloat velocityX;
+@property CGFloat velocityY;
+
 @property(readonly) NSInteger timeItTakesToDriveAMile;
 
 - (id)initWithFrame:(CGRect)frame withImage:(UIImage*)image;
@@ -51,6 +55,7 @@
 @property CGPoint right;
 
 -(void)updateValues;
+-(void)reset;
 
 -(void)cameraMoved:(CGPoint)position;
 

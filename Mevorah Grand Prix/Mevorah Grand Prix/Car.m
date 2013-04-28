@@ -12,6 +12,8 @@
 @synthesize image = image_;
 @synthesize intersectionPt;
 @synthesize timeItTakesToDriveAMile;
+@synthesize velocityX;
+@synthesize velocityY;
 
 @synthesize front, back, left, right;
 
@@ -88,6 +90,13 @@
                             locationY,
                             self.frame.size.width,
                             self.frame.size.height);
+}
+
+-(void)reset{ //fix
+    velocityX = 0;
+    velocityY = 0;
+    angle = 0;
+    self.frame = CGRectMake(240, 150, self.frame.size.width, self.frame.size.height);
 }
 
 -(void)cameraMoved:(CGPoint)position{
