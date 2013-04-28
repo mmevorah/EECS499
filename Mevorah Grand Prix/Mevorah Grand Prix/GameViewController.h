@@ -13,20 +13,26 @@
 #include "carPool.h"
 
 @interface GameViewController :UIViewController<GMSMapViewDelegate>{
+    //HighScore
+    NSMutableArray *highScores;
+    NSNumber *highScore;
+    NSString *highScoreName;
+    
     CLLocationCoordinate2D cameraPosition;
     float moveDistanceY;
     float moveDistanceX;
     
     Car *car;
     
-    bool playing;
     carPool *carPool;
     
     //Game
+    int lives;
     int totalTime;
     int currentTime;
     bool canMove;
     bool shouldTime;
+    bool justCrashed;
     //location last safe location 
     int level;
     CLLocationCoordinate2D startLocation;
@@ -57,6 +63,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *directionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *livesLabel;
+@property (strong, nonatomic) IBOutlet UITextField *nameInput;
+- (IBAction)save:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
 
 //speed label
 
@@ -64,12 +74,13 @@
 -(void)getLocationName:(CLLocationCoordinate2D)coordinate;
 -(CLLocationCoordinate2D)setDestination;
 -(void)generateDirection;
+-(void)crashed;
+-(void)highScore;
 
 
 //Game Over
 - (IBAction)playAgainButton:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UIButton *playAgainButton;
-@property (strong, nonatomic) IBOutlet UIButton *mainMenuButton;
 
 
 @end

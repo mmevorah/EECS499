@@ -27,6 +27,9 @@
 		ED0D6DE6170538E7005D54D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC1170538E7005D54D2 /* Foundation.framework */; };
 		ED0D6DEE170538E7005D54D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DEC170538E7005D54D2 /* InfoPlist.strings */; };
 		ED0D6DF1170538E7005D54D2 /* Mevorah_Grand_PrixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D6DF0170538E7005D54D2 /* Mevorah_Grand_PrixTests.m */; };
+		ED3C651A172CFB9100CD0DF8 /* Plane.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3C6519172CFB9100CD0DF8 /* Plane.png */; };
+		ED3C651C172D038900CD0DF8 /* zeppelin-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3C651B172D038900CD0DF8 /* zeppelin-01.png */; };
+		ED3C651E172D0E8E00CD0DF8 /* ufo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3C651D172D0E8E00CD0DF8 /* ufo-01.png */; };
 		ED47C71F1707868A006A7087 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C71D1707868A006A7087 /* MainMenuViewController.m */; };
 		ED47C7201707868A006A7087 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C71D1707868A006A7087 /* MainMenuViewController.m */; };
 		ED47C725170786F6006A7087 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED47C724170786F6006A7087 /* GameViewController.m */; };
@@ -95,6 +98,9 @@
 		ED0D6DED170538E7005D54D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ED0D6DEF170538E7005D54D2 /* Mevorah_Grand_PrixTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mevorah_Grand_PrixTests.h; sourceTree = "<group>"; };
 		ED0D6DF0170538E7005D54D2 /* Mevorah_Grand_PrixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mevorah_Grand_PrixTests.m; sourceTree = "<group>"; };
+		ED3C6519172CFB9100CD0DF8 /* Plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plane.png; sourceTree = "<group>"; };
+		ED3C651B172D038900CD0DF8 /* zeppelin-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zeppelin-01.png"; sourceTree = "<group>"; };
+		ED3C651D172D0E8E00CD0DF8 /* ufo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ufo-01.png"; sourceTree = "<group>"; };
 		ED47C71C1707868A006A7087 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		ED47C71D1707868A006A7087 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		ED47C723170786F6006A7087 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -270,6 +276,9 @@
 		EDA280C0170F53EF00CC3FAA /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				ED3C651D172D0E8E00CD0DF8 /* ufo-01.png */,
+				ED3C651B172D038900CD0DF8 /* zeppelin-01.png */,
+				ED3C6519172CFB9100CD0DF8 /* Plane.png */,
 				ED0C2CFB172B0EF300EB4919 /* rightArrow-01.png */,
 				ED0C2CF9172B0E6B00EB4919 /* leftArrow-01.png */,
 				ED0C2CF7172B0DB500EB4919 /* downArrow-01.png */,
@@ -371,6 +380,9 @@
 				ED0C2CF8172B0DB500EB4919 /* downArrow-01.png in Resources */,
 				ED0C2CFA172B0E6B00EB4919 /* leftArrow-01.png in Resources */,
 				ED0C2CFC172B0EF300EB4919 /* rightArrow-01.png in Resources */,
+				ED3C651A172CFB9100CD0DF8 /* Plane.png in Resources */,
+				ED3C651C172D038900CD0DF8 /* zeppelin-01.png in Resources */,
+				ED3C651E172D0E8E00CD0DF8 /* ufo-01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

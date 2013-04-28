@@ -28,6 +28,7 @@
 @synthesize nextDestinationAddress;
 
 @synthesize car = car_;
+@synthesize game;
 
 @synthesize accellerateButton;
 @synthesize reverseButton;
@@ -39,9 +40,11 @@
 @synthesize timerLabel;
 @synthesize distanceLabel;
 @synthesize directionLabel;
+@synthesize livesLabel;
+@synthesize nameInput;
+@synthesize saveButton;
 
 @synthesize playAgainButton;
-@synthesize mainMenuButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +58,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Plist Setup
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
+    NSString *plistPath = [docDir stringByAppendingPathComponent:@"highScore.plist"];
+    if([[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        NSLog(@"[FOUND PLIST For ID Manager]");
+        highScores = [NSMutableArray arrayWithContentsOfFile:plistPath];
+        highScore = [highScores objectAtIndex:0];
+        highScoreName = [highScores objectAtIndex:1];
+    }else
+    {
+        NSLog(@"[COULD NO FIND PLIST For ID Manager] CREATING A NEW ONE");
+        highScores = [[NSMutableArray alloc] init];
+        highScore = [[NSNumber alloc] initWithInt:0];
+        highScoreName = [[NSString alloc] initWithFormat:@"Mark Mevorah"];
+        [highScores addObject:highScore];
+        [highScores addObject:highScoreName];
+    }
     
     //Start Zoomed Out
     startLocation = CLLocationCoordinate2DMake(42.271291, -83.729918);
@@ -83,15 +105,18 @@
                                                userInfo:nil
                                                 repeats:YES];
 
-    car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 13, 29) withImage:[UIImage imageNamed:@"carA-01.png"]];
+    car_ = [[Car alloc] initWithFrame:CGRectMake(240, 150, 20, 40) withImage:[UIImage imageNamed:@"zeppelin-01.png"]];
     car_.hidden = true;
-    [self.view addSubview:car_];
-    [self.view addSubview:consoleView];
-    [self.view addSubview:mainMenuButton];
     
-    playing = true; //change to be set
-
+    game = [[carPool alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height)];
+        
+    [self.view addSubview:consoleView];
+    
     consoleLabel.text = @"Press a start location!";
+    
+    lives = 3;
+    justCrashed = false;
+    
     distanceLabel.hidden = true;
     directionLabel.hidden = true;
     
@@ -99,9 +124,7 @@
 }
 
 //Game Dialog
-//Add directions
 //Add sound
-//Add Hazards
 //Add Crash
 
 #pragma mark - GMSMapViewDelegate
@@ -115,11 +138,12 @@
                                                                      zoom:19
                                                                   bearing:0
                                                              viewingAngle:0]];
-    
+    [self.view addSubview:game];
+    [self.view addSubview:car_];
     [self.view addSubview:controllerView];
     [self.view addSubview:playAgainButton];
 
-    if(playing) [self performSelector:@selector(startGame) withObject:nil afterDelay:1];
+    [self performSelector:@selector(startGame) withObject:nil afterDelay:1];
 }
 
 -(void)startGame{
@@ -147,15 +171,15 @@
     double distFromDest = sqrt(pow(cameraPosition.latitude - nextDestination.latitude, 2) + pow(cameraPosition.longitude - nextDestination.longitude, 2));
     distanceLabel.text = [NSString stringWithFormat:@"%0.2f mi", distFromDest*69];
     [self generateDirection];
-    
+    livesLabel.text = [NSString stringWithFormat:@"Lives: %i", lives];
+
+    justCrashed = true;
     canMove = true;
     shouldTime = true;
 }
 
 -(void)arrivedAtDestination{
-    shouldTime = false;
-    gameTimer = nil;
-    
+    shouldTime = false;    
     canMove = false;
     consoleLabel.text = @"You made it!";
     
@@ -171,7 +195,10 @@
     //clock updated in above method
     
     level++;
+    lives++;
     car_.hidden = true;
+    game.hidden = true;
+    
     [self getLocationName:nextDestination];
     [self performSelector:@selector(beginNextTrip) withObject:nil afterDelay:8];
 }
@@ -180,6 +207,7 @@
     //zoom back in
     [mapView_ animateToZoom:19];
     car_.hidden = false;
+    game.hidden = false;
     [mapView_ clear];
     
     GMSMarkerOptions *options = [GMSMarkerOptions options];
@@ -190,6 +218,7 @@
     double distFromDest = sqrt(pow(cameraPosition.latitude - nextDestination.latitude, 2) + pow(cameraPosition.longitude - nextDestination.longitude, 2));
     distanceLabel.text = [NSString stringWithFormat:@"%0.2f mi", distFromDest*69];
     [self generateDirection];
+    livesLabel.text = [NSString stringWithFormat:@"Lives: %i", lives];
     
     canMove = true;
     shouldTime = true;
@@ -201,7 +230,7 @@
     double i = arc4random_uniform(50);
     double miles = (i/100)+.20;
     double distance = miles/69; //calculate magnitude in degrees
-    int direction = arc4random_uniform(4);
+    int direction = arc4random_uniform(7);
     
     currentTime += car_.timeItTakesToDriveAMile * miles + 5;
     CLLocationCoordinate2D coordinate;
@@ -212,8 +241,16 @@
         coordinate = CLLocationCoordinate2DMake(startLocation.latitude, startLocation.longitude + distance);
     }else if(direction == 2){ //south
         coordinate = CLLocationCoordinate2DMake(startLocation.latitude - distance, startLocation.longitude);
-    }else{ //west
+    }else if(direction == 3){ //west
         coordinate = CLLocationCoordinate2DMake(startLocation.latitude, startLocation.longitude - distance);
+    }else if(direction == 4){ //north east
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude + (distance/2), startLocation.longitude + (distance/2));
+    }else if(direction == 5){ //south east
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude - (distance/2), startLocation.longitude + (distance/2));
+    }else if(direction == 6){ //south west
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude - (distance/2), startLocation.longitude - (distance/2));
+    }else{ //north west
+        coordinate = CLLocationCoordinate2DMake(startLocation.latitude + (distance/2), startLocation.longitude - (distance)/2);
     }
     
     
@@ -223,19 +260,34 @@
 }
 
 
-/*
+
 -(void)crashed{
-    move to last safe location
-    car can move = false for three seconds
+    consoleLabel.text = @"CRASHED!";
+    shouldTime = false;
+    canMove = false;
+    lives--;
+    justCrashed = true;
+    game.hidden = true;
+    [self performSelector:@selector(afterCrash) withObject:nil afterDelay:4];
  }
-*/
- 
+
+-(void)afterCrash{
+    if(lives == 0){ [self gameOver];
+    }else{
+        canMove = true;
+        shouldTime = true;
+        consoleLabel.text = [NSString stringWithFormat:@"Ok, now go to %@!", nextDestinationAddress];
+        livesLabel.text = [NSString stringWithFormat:@"Lives: %i", lives];
+    }
+}
+
+
 -(void)resetValues{
     int startingTime = 15;  //to be tweaked in game mechanics
     level = 0;
+    lives = 3;
     currentTime =  startingTime;
     totalTime = 0;
-    car_ = [car_ initWithFrame:CGRectMake(240, 150, 13, 29) withImage:[UIImage imageNamed:@"carA-01.png"]];
     [mapView_ clear];
 }
 
@@ -245,19 +297,26 @@
     [mapView_ animateToZoom:15];
  
     car_.hidden = true;
+    game.hidden = true;
     car_.frame = CGRectMake(240, 150, 13, 29);
     
     controllerView.hidden = true;
     distanceLabel.hidden = true;
+    distanceLabel.text = @"";
     directionLabel.hidden = true;
+    directionLabel.text = @"";
+    timerLabel.text = @"";
+    livesLabel.text = @"";
 
     shouldTime = false;
-    
-    mainMenuButton.hidden = false;
-    mainMenuButton.enabled = true;
-    
-    playAgainButton.hidden = false;
-    playAgainButton.enabled = true;
+   
+    int blah = [highScore integerValue];
+    if(totalTime > blah){
+        [self highScore];
+    }else{
+        playAgainButton.hidden = false;
+        playAgainButton.enabled = true;
+    }
  }
 
 - (IBAction)playAgainButton:(UIButton *)sender {
@@ -265,12 +324,42 @@
     timerLabel.text = @"";
     
     playAgainButton.hidden = true;
-    mainMenuButton.hidden = true;
-    mainMenuButton.enabled =false;
     playAgainButton.enabled = false;
     
     mapView_.userInteractionEnabled = true;
+    
+    [game removeFromSuperview];
+    game.hidden = true;
+    [car_ removeFromSuperview];
+    [controllerView removeFromSuperview];
+
     [self resetValues];
+}
+
+-(void)highScore{
+    consoleLabel.text = [NSString stringWithFormat:@"You beat %@'s high score!", highScoreName];
+    nameInput.hidden = false;
+    saveButton.hidden = false;
+        
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
+    NSString *plistPath = [docDir stringByAppendingPathComponent:@"productID.plist"];
+    
+    NSLog(@"Highscore contains: %@", highScores);
+    NSNumber *foo = [NSNumber numberWithInt:totalTime];
+    [highScores replaceObjectAtIndex:0 withObject:foo];
+    
+    NSString *name = nameInput.text;
+    [highScores replaceObjectAtIndex:1 withObject:name];
+    
+    [highScores writeToFile:plistPath atomically:YES];
+}
+
+- (IBAction)save:(id)sender {
+    [self.view endEditing:true];
+    nameInput.hidden = true;
+    saveButton.hidden = true;
+    playAgainButton.hidden = false;
+    playAgainButton.enabled = true;
 }
 
 -(void)generateDirection{
@@ -311,8 +400,10 @@
     [mapView_ animateToLocation:cameraPosition];
     [car_ cameraMoved:movement];
     
-    //Call carPool update hazards (int currentLevel);
+    game.hidden = false;
+    [game switchedView:level];
     
+    justCrashed = false;
     
     //MAKE THIS MORE SPECIFIC
     double distFromDest = sqrt(pow(cameraPosition.latitude - nextDestination.latitude, 2) + pow(cameraPosition.longitude - nextDestination.longitude, 2));
@@ -323,35 +414,25 @@
 }
 
 -(void)update{
-    
-    
-    /* if playing
-        update direction arrows in console view --> check car location relative to destination
-            show arrows based on this
-     NEED to mae graphics fr this
-        
-        check a crash, if crash call crashed{
-            if level 0{ check hazardbox[0-8]
-            else if level 1{ checkhazardBoz[0-15]       
-                          2{                0-20
-                          3{                0-25
-        }
-     
-        update last safe location
-     
-        if car gets to destination, call get destination
-    */
-    
     if(canMove){
+        //Check Crash
+        if(!justCrashed){
+            for(int i = 0; i < [game.hazards count]; i++){
+                UIImageView *foo = [game.hazards objectAtIndex:i];
+                if((car_.frame.origin.x < (foo.frame.origin.x + foo.frame.size.width)) &&
+                   (car_.frame.origin.x > (foo.frame.origin.x)) &&
+                   (car_.frame.origin.y < (foo.frame.origin.y + foo.frame.size.height)) &&
+                   (car_.frame.origin.y > (foo.frame.origin.y))){
+                    [self crashed];
+                }
+            }
+        }
+        
         if(accellerateButton.state == UIControlStateHighlighted) [car_ accellerate];
         if(reverseButton.state == UIControlStateHighlighted) [car_ reverse];
         if(leftButton.state == UIControlStateHighlighted) [car_ turnLeft];
         if(rightButton.state == UIControlStateHighlighted) [car_ turnRight];
-    
-    
         
-        //NEED TO FIX THIS CAR MOVEMENT AND PIXEL-COORDINATE TRANSLATION
-        //SOO LOOK INTO MOVE DISTANCE
         
         if(car_.frame.origin.y <= 40){
             cameraPosition = CLLocationCoordinate2DMake(cameraPosition.latitude + moveDistanceY, cameraPosition.longitude);
@@ -407,4 +488,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 @end

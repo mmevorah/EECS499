@@ -19,7 +19,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        image_ = [[UIImageView alloc] initWithImage:image];
+        
+        image_ = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        image_.image = image;
+        
         [self addSubview:image_];
         self.layer.anchorPoint = CGPointMake(0.5, .5);   //fuck around with this
         
