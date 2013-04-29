@@ -27,6 +27,7 @@
 		ED0D6DE6170538E7005D54D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0D6DC1170538E7005D54D2 /* Foundation.framework */; };
 		ED0D6DEE170538E7005D54D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED0D6DEC170538E7005D54D2 /* InfoPlist.strings */; };
 		ED0D6DF1170538E7005D54D2 /* Mevorah_Grand_PrixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D6DF0170538E7005D54D2 /* Mevorah_Grand_PrixTests.m */; };
+		ED14B909172DC03900998193 /* story-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED14B908172DC03900998193 /* story-01.png */; };
 		ED3C651A172CFB9100CD0DF8 /* Plane.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3C6519172CFB9100CD0DF8 /* Plane.png */; };
 		ED3C651C172D038900CD0DF8 /* zeppelin-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3C651B172D038900CD0DF8 /* zeppelin-01.png */; };
 		ED3C651E172D0E8E00CD0DF8 /* ufo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3C651D172D0E8E00CD0DF8 /* ufo-01.png */; };
@@ -98,6 +99,7 @@
 		ED0D6DED170538E7005D54D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ED0D6DEF170538E7005D54D2 /* Mevorah_Grand_PrixTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mevorah_Grand_PrixTests.h; sourceTree = "<group>"; };
 		ED0D6DF0170538E7005D54D2 /* Mevorah_Grand_PrixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mevorah_Grand_PrixTests.m; sourceTree = "<group>"; };
+		ED14B908172DC03900998193 /* story-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "story-01.png"; sourceTree = "<group>"; };
 		ED3C6519172CFB9100CD0DF8 /* Plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plane.png; sourceTree = "<group>"; };
 		ED3C651B172D038900CD0DF8 /* zeppelin-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zeppelin-01.png"; sourceTree = "<group>"; };
 		ED3C651D172D0E8E00CD0DF8 /* ufo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ufo-01.png"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		EDA280C0170F53EF00CC3FAA /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				ED14B908172DC03900998193 /* story-01.png */,
 				ED3C651D172D0E8E00CD0DF8 /* ufo-01.png */,
 				ED3C651B172D038900CD0DF8 /* zeppelin-01.png */,
 				ED3C6519172CFB9100CD0DF8 /* Plane.png */,
@@ -383,6 +386,7 @@
 				ED3C651A172CFB9100CD0DF8 /* Plane.png in Resources */,
 				ED3C651C172D038900CD0DF8 /* zeppelin-01.png in Resources */,
 				ED3C651E172D0E8E00CD0DF8 /* ufo-01.png in Resources */,
+				ED14B909172DC03900998193 /* story-01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

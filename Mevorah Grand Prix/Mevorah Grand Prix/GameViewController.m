@@ -140,6 +140,8 @@
                                                                   bearing:0
                                                              viewingAngle:0]];
     [self.view addSubview:car_];
+    
+    game.hidden = true;
     [self.view addSubview:game];
     [self.view addSubview:controllerView];
     [self.view addSubview:playAgainButton];
@@ -154,7 +156,7 @@
     
     distanceLabel.hidden = false;
     directionLabel.hidden = false;
-    
+        
     [self resetValues];
     consoleLabel.text = @"Ready";
     
@@ -272,14 +274,15 @@
     car_.velocityY = 0;
     
     lives--;
+    
     justCrashed = true;
-    game.hidden = true;
     [self performSelector:@selector(afterCrash) withObject:nil afterDelay:4];
  }
 
 -(void)afterCrash{
-    if(lives == 0){ [self gameOver];
+    if(lives <= 0){ [self gameOver];
     }else{
+        game.hidden = true;
         canMove = true;
         shouldTime = true;
         consoleLabel.text = [NSString stringWithFormat:@"Ok, now go to %@!", nextDestinationAddress];
@@ -302,11 +305,15 @@
     consoleLabel.text = [NSString stringWithFormat:@"Game Over, you lasted %i seconds", totalTime];
     [mapView_ animateToZoom:15];
  
-    car_.hidden = true;
-    game.hidden = true;
+  //  car_.hidden = true;
     car_.frame = CGRectMake(240, 150, 13, 29);
     
-    controllerView.hidden = true;
+
+    [game removeFromSuperview];
+    [car_ removeFromSuperview];
+    [controllerView removeFromSuperview];
+    
+   // controllerView.hidden = true;
     distanceLabel.hidden = true;
     distanceLabel.text = @"";
     directionLabel.hidden = true;
@@ -338,10 +345,9 @@
     
     mapView_.userInteractionEnabled = true;
     
-    [game removeFromSuperview];
-    game.hidden = true;
-    [car_ removeFromSuperview];
-    [controllerView removeFromSuperview];
+    //[game removeFromSuperview];
+    //game.hidden = true;
+
 
     [self resetValues];
 }
@@ -357,11 +363,11 @@
     NSLog(@"Highscore contains: %@", highScores);
     NSNumber *foo = [NSNumber numberWithInt:totalTime];
     highScore = foo;
+    
     [highScores replaceObjectAtIndex:0 withObject:highScore];
     
-    NSString *name = nameInput.text;
     nameInput.text = @"";
-    [highScores replaceObjectAtIndex:1 withObject:name];
+    [highScores replaceObjectAtIndex:1 withObject:nameInput.text];
     
     [highScores writeToFile:plistPath atomically:YES];
 }

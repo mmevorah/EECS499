@@ -51,7 +51,7 @@
         drag = .9989;
         angularDrag = .99;
         
-        timeItTakesToDriveAMile = 55; //time it takes to drive a mile
+        timeItTakesToDriveAMile = 60; //time it takes to drive a mile
     }
     return self;
 }
