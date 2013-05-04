@@ -7,53 +7,8 @@ Idea
 ====
 For this independent study I will be focussing on iOS development. I will be delving into the applications of the google mapps api, as well as the cocos-2d game framework. What I would like to do is create a driving game, where one has the ability to potentially drive across the country (USA). Additions would include time trials, or a "crazy taxi" like game.
 
-What's Been Done
-================
--Re-familiarize myself with Objective-C
-
--Read and applied the google maps api
-
--Worked out the game's organization
-
--Worked out the car's mechanics
-
--Integrated controlles and the map
-
--Create a class that handles car information
-
--manipulate information class and map with cocoa buttons
-
--Tweak car mechanics
-
--Found a better way to rotate and display car
-
-What needs to be done in short term
-===================================
-
--move map with car's movement
-
-What needs to be done in the mid term
-=====================================
--Add restrictions to map via reverse geocoding -> changed to using color of pixels instead
-  -add crashes to car class update method
-
-What needs to be done in the long term
-======================================
--Time Trials
-  -gameplay
-  -records/saved tracks
-  
--Main menu
-  -scroll menu with options
-  
--Sound
-  -allow to use ipod/pandora music
-  -default sound effects
-  
--Options menu
-  -allow to change default sounds
-  
--Speedometer
-
+What Came Out
+=============
+So I finally submitted my final product to my professor. What the game turned out to be was, a crazy taxi game where the player drives from location to location before time runs out and while avoiding different hazards. I concluded that there aren't any viable ways for collisions to take place between a uiview and a building drawn in the maps api. So instead of having cars drive over buildings without reprocusions, I changed the primary vehicle to to a blimp; appropriately named "Mark Mevorah's Led Zeppelin."
 
 
